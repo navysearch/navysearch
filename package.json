@@ -4,12 +4,13 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest .*.test.js --coverage",
         "build:es": "babel ./src --out-dir ./dist",
         "watch:es": "watch 'npm run build:es' ./src",
         "lint": "eslint . -c ./.eslintrc.js --fix",
         "lint:ing": "watch 'npm run lint' ./src",
-        "lint:tests": "eslint __tests__/**/*.js -c ./.eslintrc.js --fix --no-ignore"
+        "lint:tests": "eslint __tests__/**/*.js -c ./.eslintrc.js --fix --no-ignore",
+        "test:ing": "npm test -- --watchAll"
     },
     "keywords": [],
     "author": "",
@@ -33,9 +34,21 @@
         "@babel/preset-env": "^7.9.5",
         "@babel/runtime": "^7.9.2",
         "babel-eslint": "^10.1.0",
+        "babel-jest": "^25.3.0",
         "babel-preset-minify": "^0.5.1",
         "eslint": "^6.8.0",
         "eslint-config-omaha-prime-grade": "^11.0.4",
+        "jest": "^25.3.0",
+        "jest-watch-typeahead": "^0.5.0",
         "watch": "^1.0.2"
+    },
+    "jest": {
+        "testMatch": [
+            "**/__tests__/**/*.(e2e|test).[jt]s?(x)"
+        ],
+        "watchPlugins": [
+            "jest-watch-typeahead/filename",
+            "jest-watch-typeahead/testname"
+        ]
     }
 }

@@ -1,6 +1,6 @@
 const {extname} = require('path');
 const {promisify} = require('util');
-const _ = require('lodash');
+const {takeWhile} = require('lodash');
 const chalk = require('chalk');
 const ora = require('ora');
 const Xray = require('x-ray');
@@ -16,8 +16,7 @@ const {year} = argv;
 const opts = argv._;
 
 const NPC_DOMAIN = 'http://www.public.navy.mil';
-const YEAR_FORMAT = 'YY';
-const YEAR_FORMAT_LENGTH = YEAR_FORMAT.length;
+const YEAR_FORMAT_LENGTH = 2;
 const MSG_TYPE_LOOKUP = {
     NAV: 'NAVADMIN',
     ALN: 'ALNAV'
@@ -30,20 +29,12 @@ const parseMessageUri = value => {
     const [messageId] = filename.split('.');
     const url = `${NPC_DOMAIN}${value}`;
     const ext = extname(value);
-    const code = _.takeWhile(messageId, isNotNumber).join('');
+    const code = takeWhile(messageId, isNotNumber).join('');
     const type = MSG_TYPE_LOOKUP[code];
     const year = messageId.substring(code.length, code.length + YEAR_FORMAT_LENGTH);
     const num = messageId.substring(code.length + YEAR_FORMAT_LENGTH);
     const id = createMessageId({type, year, num});
     return {id, type, code, year, num, ext, url};
-};
-const startMessage = items => {
-    const [{type, year}] = items;
-    return cyan(`Started fetching 20${bold(year)} ${bold(type)} data (${items.length} items)\n\n`);
-};
-const doneMessage = items => {
-    const completed = items.filter(({text}) => typeof text !== 'undefined');
-    return `${green('COMPLETE')} ~ ${bold(completed.length)} of ${bold(items.length)} items processed\n\n`;
 };
 const scrapeItems = async (type, year, domain = NPC_DOMAIN) => {
     const format = year => (String(year).length === 'YYYY'.length) ? Number(year.substr(-1 * YEAR_FORMAT_LENGTH)) : year;
@@ -62,6 +53,14 @@ const getItem = ({code, num, type, year, url}) => {
         .catch(() => ({...attributes, id}));
 };
 const getItems = async type => {
+    const startMessage = items => {
+        const [{type, year}] = items;
+        return cyan(`Started fetching 20${bold(year)} ${bold(type)} data (${items.length} items)\n\n`);
+    };
+    const doneMessage = items => {
+        const completed = items.filter(({text}) => typeof text !== 'undefined');
+        return `${green('COMPLETE')} ~ ${bold(completed.length)} of ${bold(items.length)} items processed\n\n`;
+    };
     const get = data => Promise.all(data.map(getItem));
     const years = [...new Set(year.concat(opts).filter(isNumberLike).map(String))];
     const items = (await Promise.all(years.map(year => scrapeItems(type, year)))).flat(Infinity);
