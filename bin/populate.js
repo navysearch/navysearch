@@ -11,8 +11,6 @@ const opts = argv._;
 
 (async () => {
     const years = [...new Set(year.concat(opts).filter(isNumberLike).map(String))];
-    const items = await getItems(type, years);
+    await getItems(type, years);
     // console.log(await scrapeItems('NAVADMIN', 20));
-    // const uri = '/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20080.txt';
-    // console.log(parseMessageUri(uri));
 })();

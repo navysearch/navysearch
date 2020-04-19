@@ -1,5 +1,5 @@
-import axios from 'axios';
-import moxios from 'moxios';
+// import axios from 'axios';
+// import moxios from 'moxios';
 import {createMessageId, parseMessageUri} from '../src/utils/index.js';
 
 describe('Utilities', () => {
