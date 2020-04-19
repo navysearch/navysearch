@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Utilities can create message identifier strings 1`] = `"FOOBAR2042"`;
+
+exports[`Utilities can parse fragment of message URI 1`] = `
+Object {
+  "code": "NAV",
+  "ext": ".txt",
+  "id": "NAVADMIN20080",
+  "num": "080",
+  "type": "NAVADMIN",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20080.txt",
+  "year": "20",
+}
+`;
+
+exports[`Utilities can parse full message URI 1`] = `
+Object {
+  "code": "NAV",
+  "ext": ".txt",
+  "id": "NAVADMIN20111",
+  "num": "111",
+  "type": "NAVADMIN",
+  "url": "http://www.public.navy.milhttps://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt",
+  "year": "20",
+}
+`;
