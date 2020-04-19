@@ -1,0 +1,41 @@
+{
+    "name": "navysearch",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build:es": "babel ./src --out-dir ./dist",
+        "watch:es": "watch 'npm run build:es' ./src",
+        "lint": "eslint . -c ./.eslintrc.js --fix",
+        "lint:ing": "watch 'npm run lint' ./src",
+        "lint:tests": "eslint __tests__/**/*.js -c ./.eslintrc.js --fix --no-ignore"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "algoliasearch": "^4.1.0",
+        "axios": "^0.19.2",
+        "chalk": "^4.0.0",
+        "lodash": "^4.17.15",
+        "ora": "^4.0.3",
+        "x-ray": "^2.3.4",
+        "yargs": "^15.3.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/plugin-proposal-export-default-from": "^7.8.3",
+        "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+        "@babel/plugin-transform-runtime": "^7.9.0",
+        "@babel/preset-env": "^7.9.5",
+        "@babel/runtime": "^7.9.2",
+        "babel-eslint": "^10.1.0",
+        "babel-preset-minify": "^0.5.1",
+        "eslint": "^6.8.0",
+        "eslint-config-omaha-prime-grade": "^11.0.4",
+        "watch": "^1.0.2"
+    }
+}
