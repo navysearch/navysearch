@@ -2,6 +2,18 @@
 
 exports[`Utilities can create message identifier strings 1`] = `"FOOBAR2042"`;
 
+exports[`Utilities can parse abnormal message URI 1`] = `
+Object {
+  "code": "NAV",
+  "ext": ".txt",
+  "id": "NAVADMIN20092",
+  "num": "092",
+  "type": "NAVADMIN",
+  "url": "http://www.public.navy.milhttps://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/nav20092.txt",
+  "year": "20",
+}
+`;
+
 exports[`Utilities can parse fragment of message URI 1`] = `
 Object {
   "code": "NAV",
@@ -24,4 +36,80 @@ Object {
   "url": "http://www.public.navy.milhttps://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt",
   "year": "20",
 }
+`;
+
+exports[`Utilities can split objects into smaller objects based on length of a certain key 1`] = `
+Array [
+  Object {
+    "name": "a",
+    "text": "12345",
+  },
+  Object {
+    "name": "a",
+    "text": "6789",
+  },
+]
+`;
+
+exports[`Utilities can split objects into smaller objects based on length of a certain key 2`] = `
+Array [
+  Object {
+    "name": "b",
+    "text": "12345",
+  },
+]
+`;
+
+exports[`Utilities can split objects into smaller objects based on length of a certain key 3`] = `
+Array [
+  Object {
+    "name": "c",
+    "text": "01234",
+  },
+  Object {
+    "name": "c",
+    "text": "56789",
+  },
+  Object {
+    "name": "c",
+    "text": "01234",
+  },
+  Object {
+    "name": "c",
+    "text": "56789",
+  },
+]
+`;
+
+exports[`Utilities can split objects into smaller objects based on length of a certain key 4`] = `
+Array [
+  Object {
+    "name": "a",
+    "text": "12345",
+  },
+  Object {
+    "name": "a",
+    "text": "6789",
+  },
+  Object {
+    "name": "b",
+    "text": "12345",
+  },
+  Object {
+    "name": "c",
+    "text": "01234",
+  },
+  Object {
+    "name": "c",
+    "text": "56789",
+  },
+  Object {
+    "name": "c",
+    "text": "01234",
+  },
+  Object {
+    "name": "c",
+    "text": "56789",
+  },
+]
 `;
