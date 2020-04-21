@@ -1,7 +1,9 @@
 const {promisify} = require('util');
+const log = require('npmlog');
 const chalk = require('chalk');
 const ora = require('ora');
 const Xray = require('x-ray');
+const algoliasearch = require('algoliasearch');
 const axios = require('axios').default;
 const {
     NPC_DOMAIN,
@@ -56,8 +58,34 @@ const getItems = async (type, years) => {
     spinner.succeed(doneMessage(results));
     return results;
 };
+/**
+ * Save items to Algolia search service
+ * @param {object[]} items
+ * @param {object} options Configuration options
+ * @param {string} options.id Application ID
+ * @param {string} options.key Application Admin API key
+ * @param {string} [options.name='message'] Index name
+ * @returns {object} Results of save operation
+ */
+const saveItems = async (items, options) => {
+    const {id, key, name = 'message'} = options;
+    const spinner = ora('Connecting to Algolia').start();
+    const client = algoliasearch(id, key);
+    const index = client.initIndex(name);
+    try {
+        spinner.text = `Saving ${items.length} items...`;
+        const results = await index.saveObjects(items, {autoGenerateObjectIDIfNotExist: true});
+        spinner.succeed(`Successfully saved ${items.length} items!`);
+        return results;
+    } catch (error) {
+        spinner.fail(`Failed to save ${items.length} items`);
+        log.error(error);
+    }
+};
+
 module.exports = {
     getItem,
     getItems,
+    saveItems,
     scrapeItems
 };
