@@ -19,6 +19,5 @@ const options = {
 (async () => {
     const years = [...new Set(year.concat(opts).filter(isNumberLike).map(String))];
     const items = await getItems(type, years);
-    const foo = items.filter(({text}) => text.length < 7000);
-    const results = await saveItems(foo, options);
+    await saveItems(items.filter(({text}) => text.length < 7000), options);
 })();
