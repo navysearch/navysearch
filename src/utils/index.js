@@ -10,11 +10,11 @@ const isNotNumber = value => isNaN(Number(value));
 const isNumberLike = value => !isNaN(Number(value));
 const createMessageId = ({type, year, num}) => `${type}${year}${num}`;
 const createYearsString = years => years
-.sort()
-.slice(0, -1)
-.map(year => `20${year}`)
-.join(', ')
-.concat(`${years.length > 2 ? ',' : ''} ${years.length > 1 ? 'and ' : ''}20${years.slice(-1)}`);
+    .sort()
+    .slice(0, -1)
+    .map(year => `20${year}`)
+    .join(', ')
+    .concat(`${years.length > 2 ? ',' : ''}${years.length > 1 ? ' and ' : ''}20${years.slice(-1)}`);
 const parseMessageUri = value => {
     const [filename] = value.split('/').reverse();
     const [messageId] = filename.split('.');

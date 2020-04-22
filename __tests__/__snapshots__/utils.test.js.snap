@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Utilities can create human readable strings of year values 1`] = `"2011"`;
+
+exports[`Utilities can create human readable strings of year values 2`] = `"2013 and 2014"`;
+
+exports[`Utilities can create human readable strings of year values 3`] = `"2010, 2011, 2012, 2013, and 2014"`;
+
 exports[`Utilities can create message identifier strings 1`] = `"FOOBAR2042"`;
 
 exports[`Utilities can parse abnormal message URI 1`] = `

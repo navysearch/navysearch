@@ -2,6 +2,7 @@
 // import moxios from 'moxios';
 import {
     createMessageId,
+    createYearsString,
     parseMessageUri,
     partitionByKeyLength
 } from '../src/utils/index.js';
@@ -47,5 +48,11 @@ describe('Utilities', () => {
         expect(chunk(b)).toMatchSnapshot();
         expect(chunk(c)).toMatchSnapshot();
         expect([a, b, c].flatMap(chunk)).toMatchSnapshot();
+    });
+    test('can create human readable strings of year values', () => {
+        const years = [13, 14, 10, 12, 11]; // eslint-disable-line no-magic-numbers
+        expect(createYearsString(years.slice(-1))).toMatchSnapshot();
+        expect(createYearsString(years.slice(0, 2))).toMatchSnapshot();
+        expect(createYearsString(years)).toMatchSnapshot();
     });
 });
