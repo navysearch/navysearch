@@ -92,10 +92,19 @@ const saveItems = async (items, options) => {
         log.error(error);
     }
 };
+const getSavedItems = async options => {
+    const {id, key, name = 'message'} = options;
+    const client = algoliasearch(id, key);
+    const index = client.initIndex(name);
+    await index.setSettings({paginationLimitedTo: 1e9});
+    const {hits} = await index.search('', {hitsPerPage: 1e9});
+    return hits;
+};
 
 module.exports = {
     getItem,
     getItems,
+    getSavedItems,
     saveItems,
     scrapeItems
 };

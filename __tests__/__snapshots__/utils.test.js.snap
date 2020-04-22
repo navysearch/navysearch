@@ -44,6 +44,56 @@ Object {
 }
 `;
 
+exports[`Utilities can parse message identifier strings 1`] = `
+Object {
+  "code": "NAVADMIN",
+  "id": "NAV20042",
+  "num": "042",
+  "type": "NAV",
+  "year": "20",
+}
+`;
+
+exports[`Utilities can parse message identifier strings 2`] = `
+Object {
+  "code": "ALNAV",
+  "id": "ALN19304",
+  "num": "304",
+  "type": "ALN",
+  "year": "19",
+}
+`;
+
+exports[`Utilities can parse message identifier strings 3`] = `
+Object {
+  "code": "NAV",
+  "id": "NAVADMIN20111",
+  "num": "111",
+  "type": "NAVADMIN",
+  "year": "20",
+}
+`;
+
+exports[`Utilities can parse message identifier strings 4`] = `
+Object {
+  "code": "NAV",
+  "id": "NAVADMIN20092",
+  "num": "092",
+  "type": "NAVADMIN",
+  "year": "20",
+}
+`;
+
+exports[`Utilities can parse message identifier strings 5`] = `
+Object {
+  "code": "ALN",
+  "id": "ALNAV15777",
+  "num": "777",
+  "type": "ALNAV",
+  "year": "15",
+}
+`;
+
 exports[`Utilities can split objects into smaller objects based on length of a certain key 1`] = `
 Array [
   Object {

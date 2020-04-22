@@ -3,16 +3,32 @@
 import {
     createMessageId,
     createYearsString,
+    getCurrentYear,
+    isNumberLike,
+    parseMessageId,
     parseMessageUri,
     partitionByKeyLength
 } from '../src/utils/index.js';
 
 describe('Utilities', () => {
+    test('can determine if a value is "number like"', () => {
+        const shouldBeTrue = [0, 1, 2, 3, '0', '42', '1', '07'].every(isNumberLike);
+        const shouldBeFalse = ['a', 'one', false, true, '0l'].every(val => !isNumberLike(val));
+        expect(shouldBeTrue).toBe(true);
+        expect(shouldBeFalse).toBe(false);
+    });
     test('can create message identifier strings', () => {
         const type = 'FOOBAR';
         const year = 20;
         const num = 42;
         expect(createMessageId({type, year, num})).toMatchSnapshot();
+    });
+    test('can parse message identifier strings', () => {
+        expect(parseMessageId('NAVADMIN20042')).toMatchSnapshot();
+        expect(parseMessageId('ALNAV19304')).toMatchSnapshot();
+        expect(parseMessageId('NAV20111')).toMatchSnapshot();
+        expect(parseMessageId('nav20092')).toMatchSnapshot();
+        expect(parseMessageId('ALN15777')).toMatchSnapshot();
     });
     test('can parse full message URI', () => {
         const uri = 'https://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt';
@@ -48,6 +64,9 @@ describe('Utilities', () => {
         expect(chunk(b)).toMatchSnapshot();
         expect(chunk(c)).toMatchSnapshot();
         expect([a, b, c].flatMap(chunk)).toMatchSnapshot();
+    });
+    test('can get current year', () => {
+        expect(getCurrentYear()).toEqual(20);
     });
     test('can create human readable strings of year values', () => {
         const years = [13, 14, 10, 12, 11]; // eslint-disable-line no-magic-numbers
