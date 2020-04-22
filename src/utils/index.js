@@ -1,4 +1,3 @@
-
 const {extname} = require('path');
 const {takeWhile} = require('lodash');
 
