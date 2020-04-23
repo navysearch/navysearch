@@ -2,10 +2,13 @@
 // import moxios from 'moxios';
 import {
     createMessageId,
+    createMessageUrl,
+    createNpcPageUrl,
     createYearsString,
     getCurrentYear,
     isNumberLike,
     parseMessageId,
+    parseMessageName,
     parseMessageUri,
     partitionByKeyLength
 } from '../src/utils/index.js';
@@ -23,12 +26,25 @@ describe('Utilities', () => {
         const num = 42;
         expect(createMessageId({type, year, num})).toMatchSnapshot();
     });
-    test('can parse message identifier strings', () => {
-        expect(parseMessageId('NAVADMIN20042')).toMatchSnapshot();
-        expect(parseMessageId('ALNAV19304')).toMatchSnapshot();
-        expect(parseMessageId('NAV20111')).toMatchSnapshot();
-        expect(parseMessageId('nav20092')).toMatchSnapshot();
-        expect(parseMessageId('ALN15777')).toMatchSnapshot();
+    test('can create NPC page URL', () => {
+        const type = 'NAVADMIN';
+        const year = 17;
+        expect(createNpcPageUrl({type, year})).toMatchSnapshot();
+    });
+    test('can create message URL', () => {
+        const num = 116;
+        const type = 'NAVADMIN';
+        const year = 20;
+        expect(createMessageUrl({num, type, year})).toMatchSnapshot();
+    });
+    test('can parse message ID', () => {
+        const value = 'NAVADMIN19042';
+        expect(parseMessageId(value)).toMatchSnapshot();
+    });
+    test('can parse message name', () => {
+        expect(parseMessageName('NAV20111')).toMatchSnapshot();
+        expect(parseMessageName('nav20092')).toMatchSnapshot();
+        expect(parseMessageName('ALN15777')).toMatchSnapshot();
     });
     test('can parse full message URI', () => {
         const uri = 'https://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt';

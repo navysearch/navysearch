@@ -7,17 +7,16 @@ const algoliasearch = require('algoliasearch');
 const axios = require('axios').default;
 const {
     MAX_MESSAGE_TEXT_LENGTH,
-    NPC_DOMAIN,
     createMessageId,
+    createNpcPageUrl,
     createYearsString,
     parseMessageUri,
     partitionByKeyLength
 } = require('./index.js');
 const {bold, cyan, green} = chalk;
 
-const scrapeItems = async (type, year, domain = NPC_DOMAIN) => {
-    const format = year => (String(year).length === 'YYYY'.length) ? Number(year.substr(-2)) : year; // eslint-disable-line no-magic-numbers
-    const url = `${domain}/bupers-npc/reference/messages/${type}S/Pages/${type}20${format(year)}.aspx`;
+const scrapeItems = async (type, year) => {
+    const url = createNpcPageUrl({type, year});
     return (await promisify((new Xray())(url, 'a', [{href: '@href'}]))(url))
         .map(val => val.href)
         .filter(str => /[.]txt$/.test(str))
@@ -72,9 +71,8 @@ const getItems = async (type, years) => {
  * @param {string} [options.name='message'] Index name
  * @returns {object} Results of save operation
  */
-const saveItems = async (items, options) => {
+const saveItems = async (items, {id, key, name = 'message'}) => {
     const SUFFIX_LENGTH = 5;
-    const {id, key, name = 'message'} = options;
     const spinner = ora('Connecting to Algolia').start();
     const client = algoliasearch(id, key);
     const index = client.initIndex(name);
@@ -92,8 +90,7 @@ const saveItems = async (items, options) => {
         log.error(error);
     }
 };
-const getSavedItems = async options => {
-    const {id, key, name = 'message'} = options;
+const getSavedItems = async ({id, key, name = 'message'}) => {
     const client = algoliasearch(id, key);
     const index = client.initIndex(name);
     await index.setSettings({paginationLimitedTo: 1e9});

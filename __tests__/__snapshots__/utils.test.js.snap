@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Utilities can create NPC page URL 1`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/NAVADMINS/Pages/NAVADMIN2017.aspx"`;
+
 exports[`Utilities can create human readable strings of year values 1`] = `"2011"`;
 
 exports[`Utilities can create human readable strings of year values 2`] = `"2013 and 2014"`;
 
 exports[`Utilities can create human readable strings of year values 3`] = `"2010, 2011, 2012, 2013, and 2014"`;
+
+exports[`Utilities can create message URL 1`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20116.txt"`;
 
 exports[`Utilities can create message identifier strings 1`] = `"FOOBAR2042"`;
 
@@ -15,7 +19,7 @@ Object {
   "id": "NAVADMIN20092",
   "num": "092",
   "type": "NAVADMIN",
-  "url": "http://www.public.navy.milhttps://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/nav20092.txt",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20092.txt",
   "year": "20",
 }
 `;
@@ -39,57 +43,51 @@ Object {
   "id": "NAVADMIN20111",
   "num": "111",
   "type": "NAVADMIN",
-  "url": "http://www.public.navy.milhttps://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt",
   "year": "20",
 }
 `;
 
-exports[`Utilities can parse message identifier strings 1`] = `
+exports[`Utilities can parse message ID 1`] = `
 Object {
-  "code": "NAVADMIN",
-  "id": "NAV20042",
+  "code": "NAV",
+  "id": "NAVADMIN19042",
   "num": "042",
-  "type": "NAV",
-  "year": "20",
-}
-`;
-
-exports[`Utilities can parse message identifier strings 2`] = `
-Object {
-  "code": "ALNAV",
-  "id": "ALN19304",
-  "num": "304",
-  "type": "ALN",
+  "type": "NAVADMIN",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2019/NAV19042.txt",
   "year": "19",
 }
 `;
 
-exports[`Utilities can parse message identifier strings 3`] = `
+exports[`Utilities can parse message name 1`] = `
 Object {
   "code": "NAV",
   "id": "NAVADMIN20111",
   "num": "111",
   "type": "NAVADMIN",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt",
   "year": "20",
 }
 `;
 
-exports[`Utilities can parse message identifier strings 4`] = `
+exports[`Utilities can parse message name 2`] = `
 Object {
   "code": "NAV",
   "id": "NAVADMIN20092",
   "num": "092",
   "type": "NAVADMIN",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20092.txt",
   "year": "20",
 }
 `;
 
-exports[`Utilities can parse message identifier strings 5`] = `
+exports[`Utilities can parse message name 3`] = `
 Object {
   "code": "ALN",
   "id": "ALNAV15777",
   "num": "777",
   "type": "ALNAV",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/ALNAVS/ALN2015/ALN15777.txt",
   "year": "15",
 }
 `;

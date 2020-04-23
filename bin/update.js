@@ -23,18 +23,7 @@ const options = {
     ]);
     const left = scraped.map(({id}) => id);
     const right = ([...(new Set(saved.map(({id}) => id)))]);
-    const items = await Promise.all(difference(left, right).sort().map(parseMessageId)
-        .map(getItem));
+    const updated = difference(left, right).sort().map(parseMessageId);
+    const items = await Promise.all(updated.map(getItem));
     console.log(items);
 })();
-
-// db.once('open', () => {
-//     const year = getCurrentYear();
-//     const scrapedItems = scrapeItems(type, year);
-//     const savedItems = Message.find({type, year}).exec();
-//     Bluebird.all([scrapedItems, savedItems]) // eslint-disable-line promise/catch-or-return
-//         .then(data => _.differenceWith(_.head(data), _.last(data), hasSameAttr('id')))
-//         .map(attemptRequest)
-//         .then(items => Message.create(items))
-//         .finally(() => db.close());
-// });
