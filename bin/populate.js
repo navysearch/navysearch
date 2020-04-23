@@ -1,6 +1,6 @@
 require('dotenv').config();
 const {isNumberLike} = require('../src/utils/index.js');
-const {getItems, saveItems} = require('../src/utils/data.js');
+const {populate} = require('../src/utils/data.js');
 
 const {argv} = require('yargs')
     .default('type', 'NAVADMIN')
@@ -9,15 +9,9 @@ const {argv} = require('yargs')
 const {type, year} = argv;
 const opts = argv._;
 
-const {APP_ID, ADMIN_API_KEY} = process.env;
-const options = {
-    id: APP_ID,
-    key: ADMIN_API_KEY,
-    name: 'message'
-};
-
+const {APP_ID: id, ADMIN_API_KEY: key} = process.env;
 (async () => {
     const years = [...new Set(year.concat(opts).filter(isNumberLike).map(String))];
-    const items = await getItems(type, years);
-    await saveItems(items, options);
+    const results = await populate(type, years, {id, key});
+    console.log(results);
 })();

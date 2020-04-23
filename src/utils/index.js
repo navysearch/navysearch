@@ -12,8 +12,10 @@ const createNpcPageUrl = ({type, year}) => {
 };
 const createMessageUrl = ({num, type, year}) => {
     const code = invertObj(MESSAGE_TYPE_LOOKUP)[type];
-    const fragment = 'bupers-npc/reference/messages/Documents';
-    return `${NPC_DOMAIN}/${fragment}/${type}S/${code}20${year}/${code}${year}${num}.txt`;
+    const useDocuments2 = (code === 'NAV') && (parseInt(year, 10) < 18);
+    const useSubfolder = ((code === 'NAV') && (parseInt(year, 10) > 17)) || (code === 'ALN');
+    const fragment = `bupers-npc/reference/messages/Documents${useDocuments2 ? '2' : ''}`;
+    return `${NPC_DOMAIN}/${fragment}/${useSubfolder ? `${type}S/` : ''}${code}20${year}/${code}${year}${num}.txt`;
 };
 const createYearsString = years => years
     .sort()
@@ -44,7 +46,6 @@ const parseMessageId = value => {
 const parseMessageUri = value => {
     const [filename] = value.split('/').reverse();
     const [messageId] = filename.split('.');
-    const url = `${NPC_DOMAIN}${value}`;
     const ext = extname(value);
     return {...parseMessageName(messageId), ext};
 };

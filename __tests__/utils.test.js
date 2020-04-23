@@ -32,10 +32,41 @@ describe('Utilities', () => {
         expect(createNpcPageUrl({type, year})).toMatchSnapshot();
     });
     test('can create message URL', () => {
-        const num = 116;
-        const type = 'NAVADMIN';
-        const year = 20;
-        expect(createMessageUrl({num, type, year})).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: '116',
+            type: 'NAVADMIN',
+            year: '20'
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: '042',
+            type: 'NAVADMIN',
+            year: '19'
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: '042',
+            type: 'NAVADMIN',
+            year: '18'
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: '042',
+            type: 'NAVADMIN',
+            year: '17'
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: '042',
+            type: 'ALNAV',
+            year: '18'
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: '042',
+            type: 'ALNAV',
+            year: '15'
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: '042',
+            type: 'ALNAV',
+            year: '10'
+        })).toMatchSnapshot();
     });
     test('can parse message ID', () => {
         const value = 'NAVADMIN19042';

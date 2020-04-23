@@ -10,6 +10,18 @@ exports[`Utilities can create human readable strings of year values 3`] = `"2010
 
 exports[`Utilities can create message URL 1`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20116.txt"`;
 
+exports[`Utilities can create message URL 2`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2019/NAV19042.txt"`;
+
+exports[`Utilities can create message URL 3`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2018/NAV18042.txt"`;
+
+exports[`Utilities can create message URL 4`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/Documents2/NAV2017/NAV17042.txt"`;
+
+exports[`Utilities can create message URL 5`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/Documents/ALNAVS/ALN2018/ALN18042.txt"`;
+
+exports[`Utilities can create message URL 6`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/Documents/ALNAVS/ALN2015/ALN15042.txt"`;
+
+exports[`Utilities can create message URL 7`] = `"http://www.public.navy.mil/bupers-npc/reference/messages/Documents/ALNAVS/ALN2010/ALN10042.txt"`;
+
 exports[`Utilities can create message identifier strings 1`] = `"FOOBAR2042"`;
 
 exports[`Utilities can parse abnormal message URI 1`] = `

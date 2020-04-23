@@ -5,11 +5,14 @@ const ora = require('ora');
 const Xray = require('x-ray');
 const algoliasearch = require('algoliasearch');
 const axios = require('axios').default;
+const {difference} = require('ramda');
 const {
     MAX_MESSAGE_TEXT_LENGTH,
     createMessageId,
     createNpcPageUrl,
     createYearsString,
+    getCurrentYear,
+    parseMessageId,
     parseMessageUri,
     partitionByKeyLength
 } = require('./index.js');
@@ -43,24 +46,34 @@ const getItems = async (type, years) => {
     };
     const get = data => Promise.all(data.map(getItem));
     const items = (await Promise.all(years.map(year => scrapeItems(type, year)))).flat(Infinity);
-    const spinner = ora(startMessage(items)).start();
-    const data = await get(items);
-    const retry = async data => {
-        const failed = data.filter(({text}) => typeof text === 'undefined');
-        spinner.text = cyan(`Trying to fetch data for ${bold(failed.length)} of ${items.length} items`);
-        return (failed.length !== 0) ? get(failed) : Promise.resolve([]);
+    const continueOperation = async () => {
+        const spinner = ora(startMessage(items)).start();
+        const data = await get(items);
+        const retry = async data => {
+            const failed = data.filter(({text}) => typeof text === 'undefined');
+            spinner.text = cyan(`Trying to fetch data for ${bold(failed.length)} of ${items.length} items`);
+            return (failed.length !== 0) ? get(failed) : Promise.resolve([]);
+        };
+        const secondAttempt = await retry(data);
+        const thirdAttempt = await retry(secondAttempt);
+        const fourthAttempt = await retry(thirdAttempt);
+        const results = [
+            ...data,
+            ...secondAttempt,
+            ...thirdAttempt,
+            ...fourthAttempt
+        ].filter(({text}) => typeof text !== 'undefined');
+        spinner.succeed(doneMessage(results));
+        return results;
     };
-    const secondAttempt = await retry(data);
-    const thirdAttempt = await retry(secondAttempt);
-    const fourthAttempt = await retry(thirdAttempt);
-    const results = [
-        ...data,
-        ...secondAttempt,
-        ...thirdAttempt,
-        ...fourthAttempt
-    ].filter(({text}) => typeof text !== 'undefined');
-    spinner.succeed(doneMessage(results));
-    return results;
+    return items.length > 0 ? continueOperation() : [];
+};
+const getSavedItems = async ({id, key, name = 'message'}) => {
+    const client = algoliasearch(id, key);
+    const index = client.initIndex(name);
+    await index.setSettings({paginationLimitedTo: 1e9});
+    const {hits} = await index.search('', {hitsPerPage: 1e9});
+    return hits;
 };
 /**
  * Save items to Algolia search service
@@ -90,18 +103,33 @@ const saveItems = async (items, {id, key, name = 'message'}) => {
         log.error(error);
     }
 };
-const getSavedItems = async ({id, key, name = 'message'}) => {
-    const client = algoliasearch(id, key);
-    const index = client.initIndex(name);
-    await index.setSettings({paginationLimitedTo: 1e9});
-    const {hits} = await index.search('', {hitsPerPage: 1e9});
-    return hits;
+const populate = async (type, years, {id, key, name}) => {
+    const items = await getItems(type, years);
+    const results = await saveItems(items, {id, key, name});
+    return results;
+};
+const update = async (type, {id, key, name, verbose = true}) => {
+    const [scraped, saved] = await Promise.all([
+        getItems(type, [getCurrentYear()], {verbose}),
+        getSavedItems({id, key, name})
+    ]);
+    const left = scraped.map(({id}) => id);
+    const right = ([...(new Set(saved.map(({id}) => id)))]);
+    const updated = difference(left, right).sort().map(parseMessageId);
+    const items = await Promise.all(updated.map(getItem));
+    if (items.length > 0) {
+        await saveItems(items, {id, key, name});
+    } else {
+        verbose && process.stdout.write(`${bold('No records to update')}\n\n`);
+    }
 };
 
 module.exports = {
     getItem,
     getItems,
     getSavedItems,
+    populate,
     saveItems,
-    scrapeItems
+    scrapeItems,
+    update
 };
