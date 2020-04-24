@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1587758845402" clover="3.2.0">
-  <project timestamp="1587758845402" name="All files">
+<coverage generated="1587759905014" clover="3.2.0">
+  <project timestamp="1587759905014" name="All files">
     <metrics statements="141" coveredstatements="110" conditionals="26" coveredconditionals="16" methods="41" coveredmethods="32" elements="208" coveredelements="158" complexity="0" loc="141" ncloc="141" packages="1" files="2" classes="2"/>
     <file name="common.js" path="C:\Users\jason\dev\navysearch\src\utils\common.js">
       <metrics statements="54" coveredstatements="54" conditionals="15" coveredconditionals="14" methods="15" coveredmethods="14"/>
