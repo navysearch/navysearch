@@ -1,8 +1,11 @@
+require('dotenv').config();
+const meow = require('meow');
+const getStdin = require('get-stdin');
 const {cross} = require('figures');
 const {bold, cyan} = require('chalk');
 const {format} = require('tomo-cli');
-const {dict, getCurrentYear} = require('./common.js');
-const {populate, update} = require('./data.js');
+const {dict, getCurrentYear} = require('./utils/common.js');
+const {populate, update} = require('./utils/data.js');
 
 const getAction = (command, flags, defaultAction) => {
     const {id, key, type, verbose, year} = flags;
@@ -49,6 +52,11 @@ const help = `
 const options = {
     help,
     flags: {
+        help: {
+            type: 'boolean',
+            default: false,
+            alias: 'h'
+        },
         version: {
             type: 'boolean',
             default: false,
@@ -80,8 +88,10 @@ const options = {
     }
 };
 
-module.exports = {
-    getAction,
-    help,
-    options
-};
+const {input, flags, showHelp} = meow(options);
+(async () => {
+    const stdin = await getStdin();
+    const [command] = input;
+    const action = getAction(command, flags, showHelp);
+    await action(stdin);
+})();

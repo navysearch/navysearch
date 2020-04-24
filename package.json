@@ -5,12 +5,14 @@
     "main": "index.js",
     "scripts": {
         "test": "jest .*.test.js --coverage",
-        "build:es": "babel ./src --out-dir ./dist",
+        "build:es": "babel ./src --out-dir ./bin",
         "watch:es": "watch 'npm run build:es' ./src",
         "lint": "eslint . -c ./.eslintrc.js --fix",
         "lint:ing": "watch 'npm run lint' ./src",
         "lint:tests": "eslint __tests__/**/*.js -c ./.eslintrc.js --fix --no-ignore",
-        "test:ing": "npm test -- --watchAll"
+        "test:ing": "npm test -- --watchAll",
+        "pkg": "pkg --output usn --options no-warnings ./bin/cli.js",
+        "nexe": "nexe --input ./bin/cli.js --output usn"
     },
     "keywords": [],
     "author": "",
@@ -48,6 +50,7 @@
         "jest": "^25.3.0",
         "jest-watch-typeahead": "^0.5.0",
         "moxios": "^0.4.0",
+        "nexe": "^3.3.2",
         "watch": "^1.0.2"
     },
     "jest": {
