@@ -11,7 +11,7 @@ import {
     parseMessageName,
     parseMessageUri,
     partitionByKeyLength
-} from '../src/utils/index.js';
+} from '../src/utils/common.js';
 
 describe('Utilities', () => {
     test('can determine if a value is "number like"', () => {
@@ -113,7 +113,7 @@ describe('Utilities', () => {
         expect([a, b, c].flatMap(chunk)).toMatchSnapshot();
     });
     test('can get current year', () => {
-        expect(getCurrentYear()).toEqual(20);
+        expect(getCurrentYear()).toEqual(20); // eslint-disable-line no-magic-numbers
     });
     test('can create human readable strings of year values', () => {
         const years = [13, 14, 10, 12, 11]; // eslint-disable-line no-magic-numbers

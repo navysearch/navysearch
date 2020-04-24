@@ -15,9 +15,15 @@ const {
     parseMessageId,
     parseMessageUri,
     partitionByKeyLength
-} = require('./index.js');
+} = require('./common.js');
 const {bold, cyan, green} = chalk;
 
+/**
+ * Scrape message data from  NPC
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {(string|number)} year Last two digits of year of page to scrape from
+ * @returns {object[]}
+ */
 const scrapeItems = async (type, year) => {
     const url = createNpcPageUrl({type, year});
     return (await promisify((new Xray())(url, 'a', [{href: '@href'}]))(url))
@@ -42,7 +48,7 @@ const getItems = async (type, years) => {
     };
     const doneMessage = items => {
         const completed = items.filter(({text}) => typeof text !== 'undefined');
-        return `${green('COMPLETE')} ~ ${bold(completed.length)} of ${bold(items.length)} items processed\n\n`;
+        return `${green('COMPLETE')} ~ ${bold(completed.length)} of ${bold(items.length)} items processed\n`;
     };
     const get = data => Promise.all(data.map(getItem));
     const items = (await Promise.all(years.map(year => scrapeItems(type, year)))).flat(Infinity);
@@ -96,7 +102,7 @@ const saveItems = async (items, {id, key, name = 'message'}) => {
             .flatMap(chunk)
             .map((item, index) => ({...item, objectID: `${item.objectID}_${String(index).padStart(SUFFIX_LENGTH, '0')}`}));
         const results = await index.saveObjects(itemsToUpload);
-        spinner.succeed(`Successfully saved ${items.length} (${itemsToUpload.length} total) items!`);
+        spinner.succeed(`Successfully saved ${items.length} (${itemsToUpload.length} total) items!\n`);
         return results;
     } catch (error) {
         spinner.fail(`Failed to save ${items.length} items`);
@@ -117,11 +123,11 @@ const update = async (type, {id, key, name, verbose = true}) => {
     const right = ([...(new Set(saved.map(({id}) => id)))]);
     const updated = difference(left, right).sort().map(parseMessageId);
     const items = await Promise.all(updated.map(getItem));
-    if (items.length > 0) {
-        await saveItems(items, {id, key, name});
-    } else {
-        verbose && process.stdout.write(`${bold('No records to update')}\n\n`);
+    const noItems = items.length === 0;
+    if (noItems) {
+        process.stdout.write(`${bold('No records to update')}\n\n`);
     }
+    return noItems ? {objectIDs: []} : await saveItems(items, {id, key, name});
 };
 
 module.exports = {

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for index.js</title>
+    <title>Code coverage report for common.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> index.js</h1>
+        <h1><a href="index.html">All files</a> common.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">98.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>59/59</span>
+                <span class='fraction'>60/61</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>53/53</span>
+                <span class='fraction'>54/54</span>
             </div>
         
             
@@ -136,7 +136,16 @@
 <a name='L77'></a><a href='#L77'>77</a>
 <a name='L78'></a><a href='#L78'>78</a>
 <a name='L79'></a><a href='#L79'>79</a>
-<a name='L80'></a><a href='#L80'>80</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -147,6 +156,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">14x</span>
@@ -165,6 +181,7 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">37x</span>
 <span class="cline-any cline-yes">11x</span>
@@ -215,6 +232,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const {extname} = require('path');
 const {invertObj, takeWhile} = require('ramda');
 &nbsp;
@@ -227,12 +245,19 @@ const createNpcPageUrl = ({type, year}) =&gt; {
     const format = year =&gt; (String(year).length === 'YYYY'.length) ? <span class="branch-0 cbranch-no" title="branch not covered" >Number(year.substr(-2)) </span>: year; // eslint-disable-line no-magic-numbers
     return `${NPC_DOMAIN}/bupers-npc/reference/messages/${type}S/Pages/${type}20${format(year)}.aspx`;
 };
+/**
+ * Create URL for actual message text
+ * @param {object} options
+ * @param {string} num Message number (ex: '042', '231')
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {(string|number)} year Last two digits of year of page to scrape from
+ */
 const createMessageUrl = ({num, type, year}) =&gt; {
     const code = invertObj(MESSAGE_TYPE_LOOKUP)[type];
     const yearNumber = parseInt(year, 10);
     const isNAVADMIN = code === 'NAV';
     const isALNAV = code === 'ALN';
-    const isOldMessage = yearNumber &lt; 18;
+    const isOldMessage = yearNumber &lt; 18; // eslint-disable-line no-magic-numbers
     const useDocuments2 = isNAVADMIN &amp;&amp; isOldMessage;
     const useSubfolder = (isNAVADMIN &amp;&amp; !isOldMessage) || isALNAV;
     const fragment = `bupers-npc/reference/messages/Documents${useDocuments2 ? '2' : ''}`;
@@ -244,6 +269,7 @@ const createYearsString = years =&gt; years
     .map(year =&gt; `20${year}`)
     .join(', ')
     .concat(`${years.length &gt; 2 ? ',' : ''}${years.length &gt; 1 ? ' and ' : ''}20${years.slice(-1)}`);
+const dict = <span class="fstat-no" title="function not covered" >va</span>l =&gt; (<span class="cstat-no" title="statement not covered" >new Map(Object.entries(val)))</span>;
 const getCurrentYear = () =&gt; Number(String((new Date()).getFullYear()).substring(2));
 const isNotNumber = value =&gt; isNaN(Number(value));
 const isNumberLike = value =&gt; !isNaN(Number(value));
@@ -287,6 +313,7 @@ module.exports = {
     createMessageUrl,
     createNpcPageUrl,
     createYearsString,
+    dict,
     getCurrentYear,
     isNotNumber,
     isNumberLike,
@@ -301,7 +328,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 23 2020 15:53:31 GMT-0500 (Central Daylight Time)
+                at Thu Apr 23 2020 20:05:24 GMT-0500 (Central Daylight Time)
             </div>
         </div>
         <script src="prettify.js"></script>

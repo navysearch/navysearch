@@ -10,10 +10,21 @@ const createNpcPageUrl = ({type, year}) => {
     const format = year => (String(year).length === 'YYYY'.length) ? Number(year.substr(-2)) : year; // eslint-disable-line no-magic-numbers
     return `${NPC_DOMAIN}/bupers-npc/reference/messages/${type}S/Pages/${type}20${format(year)}.aspx`;
 };
+/**
+ * Create URL for actual message text
+ * @param {object} options
+ * @param {string} num Message number (ex: '042', '231')
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {(string|number)} year Last two digits of year of page to scrape from
+ */
 const createMessageUrl = ({num, type, year}) => {
     const code = invertObj(MESSAGE_TYPE_LOOKUP)[type];
-    const useDocuments2 = (code === 'NAV') && (parseInt(year, 10) < 18);
-    const useSubfolder = ((code === 'NAV') && (parseInt(year, 10) > 17)) || (code === 'ALN');
+    const yearNumber = parseInt(year, 10);
+    const isNAVADMIN = code === 'NAV';
+    const isALNAV = code === 'ALN';
+    const isOldMessage = yearNumber < 18; // eslint-disable-line no-magic-numbers
+    const useDocuments2 = isNAVADMIN && isOldMessage;
+    const useSubfolder = (isNAVADMIN && !isOldMessage) || isALNAV;
     const fragment = `bupers-npc/reference/messages/Documents${useDocuments2 ? '2' : ''}`;
     return `${NPC_DOMAIN}/${fragment}/${useSubfolder ? `${type}S/` : ''}${code}20${year}/${code}${year}${num}.txt`;
 };
@@ -23,6 +34,7 @@ const createYearsString = years => years
     .map(year => `20${year}`)
     .join(', ')
     .concat(`${years.length > 2 ? ',' : ''}${years.length > 1 ? ' and ' : ''}20${years.slice(-1)}`);
+const dict = val => (new Map(Object.entries(val)));
 const getCurrentYear = () => Number(String((new Date()).getFullYear()).substring(2));
 const isNotNumber = value => isNaN(Number(value));
 const isNumberLike = value => !isNaN(Number(value));
@@ -66,6 +78,7 @@ module.exports = {
     createMessageUrl,
     createNpcPageUrl,
     createYearsString,
+    dict,
     getCurrentYear,
     isNotNumber,
     isNumberLike,
