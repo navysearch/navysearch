@@ -6,6 +6,7 @@ const Xray = require('x-ray');
 const algoliasearch = require('algoliasearch');
 const axios = require('axios').default;
 const {difference} = require('ramda');
+const parser = require('navy-message-parser');
 const {
     MAX_MESSAGE_TEXT_LENGTH,
     createMessageId,
@@ -35,13 +36,26 @@ const scrapeMessageItems = async (type, year) => {
         .map(parseMessageUri)
         .filter(({code, num}) => [code, num].every(({length}) => length > 0));
 };
+/**
+ * Get message data
+ * @returns {object} Parsed message data
+ */
 const getItem = ({code, num, type, year, url}) => {
     const attributes = {code, num, type, url, year};
     const id = createMessageId(attributes);
     return axios.get(url)
-        .then(({data: text}) => ({...attributes, id, text, objectID: id}))
+        .then(({data: text}) => {
+            const subject = parser.input(text).parse().get('subject') || 'BLANK';
+            return {...attributes, id, subject, text, objectID: id};
+        })
         .catch(() => ({...attributes, id, objectID: id}));
 };
+/**
+ * Get message data for a certain years
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {(string[]|number[])} years Last two digits of year of page to scrape from
+ * @returns {object[]} Collection of message data items
+ */
 const getItems = async (type, years) => {
     const startMessage = items => {
         const [{type}] = items;
@@ -77,6 +91,11 @@ const getItems = async (type, years) => {
     };
     return items.length > 0 ? continueOperation() : [];
 };
+/**
+ * Get items from Algolia index
+ * @param {object} options Configuration object
+ * @returns {object} Results of get operations
+ */
 const getSavedItems = async ({id, key, name = 'message'}) => {
     const client = algoliasearch(id, key);
     const index = client.initIndex(name);
@@ -112,11 +131,31 @@ const saveItems = async (items, {id, key, name = 'message'}) => {
         log.error(error);
     }
 };
+/**
+ * Populate Algolia index with message data for certain years
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {string[]} years Years to add to Algolia index
+ * @param {object} options Algolia options
+ * @param {string} options.id Algolia application ID
+ * @param {string} options.key Algolia admin application key
+ * @param {string} [options.name='message'] Algolia index name
+ * @returns {object} Results of populate
+ */
 const populate = async (type, years, {id, key, name}) => {
     const items = await getItems(type, years);
     const results = await saveItems(items, {id, key, name});
     return results;
 };
+/**
+ * Update Algolia index with missing message data for current year
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {object} options Algolia options
+ * @param {string} options.id Algolia application ID
+ * @param {string} options.key Algolia admin application key
+ * @param {string} [options.name] Algolia index name
+ * @param {string} [options.verbose=true] Toggle terminal output verbosity
+ * @returns {object} Results of populate
+ */
 const update = async (type, {id, key, name, verbose = true}) => {
     const [scraped, saved] = await Promise.all([
         getItems(type, [getCurrentYear()], {verbose}),

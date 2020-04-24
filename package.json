@@ -32,6 +32,7 @@
         "figures": "^3.2.0",
         "lodash": "^4.17.15",
         "meow": "^6.1.0",
+        "navy-message-parser": "0.0.7",
         "npmlog": "^4.1.2",
         "ora": "^4.0.3",
         "pkg": "^4.4.7",
