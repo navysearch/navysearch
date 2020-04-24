@@ -4,7 +4,7 @@
     "description": "",
     "main": "src/utils/data.js",
     "bin": {
-        "usn": "bin/cli.js"
+        "usn": "./src/index.js"
     },
     "scripts": {
         "test": "jest .*.test.js --coverage",

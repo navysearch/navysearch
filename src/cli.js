@@ -1,6 +1,4 @@
 require('dotenv').config();
-const meow = require('meow');
-const getStdin = require('get-stdin');
 const {cross} = require('figures');
 const {bold, cyan} = require('chalk');
 const {format} = require('tomo-cli');
@@ -88,10 +86,7 @@ const options = {
     }
 };
 
-const {input, flags, showHelp} = meow(options);
-(async () => {
-    const stdin = await getStdin();
-    const [command] = input;
-    const action = getAction(command, flags, showHelp);
-    await action(stdin);
-})();
+module.exports = {
+    getAction,
+    options
+};
