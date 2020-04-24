@@ -2,7 +2,10 @@
     "name": "navysearch",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "src/utils/data.js",
+    "bin": {
+        "usn": "bin/cli.js"
+    },
     "scripts": {
         "test": "jest .*.test.js --coverage",
         "build:es": "babel ./src --out-dir ./bin",
