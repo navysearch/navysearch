@@ -1,6 +1,6 @@
 {
     "name": "navysearch",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "",
     "main": "src/utils/data.js",
     "bin": {
