@@ -1,10 +1,9 @@
 {
     "name": "usn",
     "version": "0.0.4",
-    "description": "",
-    "main": "src/utils/data.js",
+    "description": "Command line tool and library for working with USN data",
     "bin": {
-        "usn": "./src/index.js"
+        "usn": "./bin/index.js"
     },
     "scripts": {
         "test": "jest .*.test.js --coverage",
@@ -18,8 +17,12 @@
         "pkg": "pkg --output usn --options no-warnings ./bin/cli.js",
         "nexe": "nexe --input ./bin/cli.js --output usn"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": [
+        "us",
+        "navy",
+        "messages"
+    ],
+    "author": "Jason Wohlgemut",
     "license": "ISC",
     "dependencies": {
         "algoliasearch": "^4.1.0",
