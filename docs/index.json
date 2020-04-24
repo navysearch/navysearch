@@ -1,0 +1,2393 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/cli.js",
+    "content": "require('dotenv').config();\nconst {cross} = require('figures');\nconst {bold, cyan} = require('chalk');\nconst {format} = require('tomo-cli');\nconst {dict, getCurrentYear} = require('./utils/common.js');\nconst {populate, update} = require('./utils/data.js');\n\nconst getAction = (command, flags, defaultAction) => {\n    const {id, key, type, verbose, year} = flags;\n    const years = [...new Set(year.split(','))].sort();\n    const noCommand = stdin => {\n        if (typeof command === 'string') {\n            const message = `\\n${bold.red(cross)} \"${command}\" is not a known command...Please read the help below.\\n`;\n            process.stderr.write(message);\n            defaultAction();\n        } else {\n            process.stdout.write(`STDIN: ${stdin}`);\n        }\n    };\n    const lookup = dict({\n        populate: async () => {\n            await populate(type, years, {id, key});\n        },\n        update: async () => {\n            const results = await update(type, {id, key, verbose});\n            results.objectIDs.length > 0 && process.stdout.write(format(results));\n        },\n        info: async () => {/* eslint-disable no-console */\n            console.log(`\\n  ${bold('ID')}  = `, id);\n            console.log(`  ${bold('Key')} = `, key);\n        }/* eslint-enable no-console */\n    });\n    return lookup.has(command) ? lookup.get(command) : noCommand;\n};\nconst help = `\n    ${bold.bgBlue.white(' Navy Search ')}\n      \n        ${cyan(`\"Search for those that ${bold('serve')}\"`)}\n\n    ${bold.dim('Usage')}\n\n        ./usn.exe [commands] [options]\n\n\n    ${bold.dim('Commands')}\n\n        populate, update, version\n\n`;\nconst options = {\n    help,\n    flags: {\n        help: {\n            type: 'boolean',\n            default: false,\n            alias: 'h'\n        },\n        version: {\n            type: 'boolean',\n            default: false,\n            alias: 'v'\n        },\n        verbose: {\n            type: 'boolean',\n            default: false,\n            alias: 'V'\n        },\n        type: {\n            type: 'string',\n            default: 'NAVADMIN',\n            alias: 't'\n        },\n        year: {\n            type: 'string',\n            default: String(getCurrentYear()),\n            alias: 'y'\n        },\n        id: {\n            type: 'string',\n            default: process.env.ALGOLIA_APP_ID || bold.red('not set')\n        },\n        key: {\n            type: 'string',\n            default: process.env.ALGOLIA_ADMIN_API_KEY || bold.red('not set')\n        }\n    }\n};\n\nmodule.exports = {\n    getAction,\n    options\n};",
+    "static": true,
+    "longname": "C:/Users/jason/dev/navysearch/src/cli.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "variable",
+    "name": "cross",
+    "memberof": "src/cli.js",
+    "static": true,
+    "longname": "src/cli.js~cross",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/cli.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "variable",
+    "name": "bold",
+    "memberof": "src/cli.js",
+    "static": true,
+    "longname": "src/cli.js~bold",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/cli.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "variable",
+    "name": "format",
+    "memberof": "src/cli.js",
+    "static": true,
+    "longname": "src/cli.js~format",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/cli.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "variable",
+    "name": "dict",
+    "memberof": "src/cli.js",
+    "static": true,
+    "longname": "src/cli.js~dict",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/cli.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "variable",
+    "name": "populate",
+    "memberof": "src/cli.js",
+    "static": true,
+    "longname": "src/cli.js~populate",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/cli.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "getAction",
+    "memberof": "src/cli.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/cli.js~getAction",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/cli.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [
+      {
+        "name": "command",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "flags",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "defaultAction",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "variable",
+    "name": "help",
+    "memberof": "src/cli.js",
+    "static": true,
+    "longname": "src/cli.js~help",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/cli.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "variable",
+    "name": "options",
+    "memberof": "src/cli.js",
+    "static": true,
+    "longname": "src/cli.js~options",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/cli.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 50,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"help\": *, \"flags\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "#!/usr/bin/env node\nconst meow = require('meow');\nconst getStdin = require('get-stdin');\nconst {getAction, options} = require('./cli.js');\n\nconst {input, flags, showHelp} = meow(options);\n(async () => {\n    const stdin = await getStdin();\n    const [command] = input;\n    const action = getAction(command, flags, showHelp);\n    await action(stdin);\n})();",
+    "static": true,
+    "longname": "C:/Users/jason/dev/navysearch/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 58,
+    "kind": "variable",
+    "name": "meow",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~meow",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "variable",
+    "name": "getStdin",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~getStdin",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "variable",
+    "name": "getAction",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~getAction",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "variable",
+    "name": "input",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~input",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "file",
+    "name": "src/utils/common.js",
+    "content": "const {extname} = require('path');\nconst {invertObj, takeWhile} = require('ramda');\n\nconst NPC_DOMAIN = 'http://www.public.navy.mil';\nconst MAX_MESSAGE_TEXT_LENGTH = 5000;\nconst MESSAGE_TYPE_LOOKUP = {NAV: 'NAVADMIN', ALN: 'ALNAV'};\nconst YEAR_FORMAT_LENGTH = 2;\nconst createMessageId = ({type, year, num}) => `${type}${year}${num}`;\nconst createNpcPageUrl = ({type, year}) => {\n    const format = year => (String(year).length === 'YYYY'.length) ? Number(year.substr(-2)) : year; // eslint-disable-line no-magic-numbers\n    return `${NPC_DOMAIN}/bupers-npc/reference/messages/${type}S/Pages/${type}20${format(year)}.aspx`;\n};\n/**\n * Create URL for actual message text\n * @param {object} options Message URL parameters\n * @param {string} options.num Message number (ex: '042', '231')\n * @param {string} options.type NAVADMIN | ALNAV\n * @param {(string|number)} options.year Last two digits of year of page to scrape from\n * @returns {string} Message URL\n */\nconst createMessageUrl = ({num, type, year}) => {\n    const code = invertObj(MESSAGE_TYPE_LOOKUP)[type];\n    const yearNumber = parseInt(year, 10);\n    const isNAVADMIN = code === 'NAV';\n    const isALNAV = code === 'ALN';\n    const isOldMessage = yearNumber < 18; // eslint-disable-line no-magic-numbers\n    const useDocuments2 = isNAVADMIN && isOldMessage;\n    const useSubfolder = (isNAVADMIN && !isOldMessage) || isALNAV;\n    const fragment = `bupers-npc/reference/messages/Documents${useDocuments2 ? '2' : ''}`;\n    return `${NPC_DOMAIN}/${fragment}/${useSubfolder ? `${type}S/` : ''}${code}20${year}/${code}${year}${num}.txt`;\n};\nconst createYearsString = years => years\n    .sort()\n    .slice(0, -1)\n    .map(year => `20${year}`)\n    .join(', ')\n    .concat(`${years.length > 2 ? ',' : ''}${years.length > 1 ? ' and ' : ''}20${years.slice(-1)}`);\nconst dict = val => (new Map(Object.entries(val)));\nconst getCurrentYear = () => Number(String((new Date()).getFullYear()).substring(2));\nconst isNotNumber = value => isNaN(Number(value));\nconst isNumberLike = value => !isNaN(Number(value));\nconst parseMessageName = value => {\n    const code = takeWhile(isNotNumber, [...value]).join('').toUpperCase();\n    const type = MESSAGE_TYPE_LOOKUP[code];\n    const year = value.substring(code.length, code.length + YEAR_FORMAT_LENGTH);\n    const num = value.substring(code.length + YEAR_FORMAT_LENGTH);\n    const url = createMessageUrl({num, type, year});\n    const id = createMessageId({num, type, year});\n    return {code, id, num, type, url, year};\n};\nconst parseMessageId = value => {\n    const type = takeWhile(isNotNumber, [...value]).join('').toUpperCase();\n    const code = invertObj(MESSAGE_TYPE_LOOKUP)[type];\n    const year = value.substring(type.length, type.length + YEAR_FORMAT_LENGTH);\n    const num = value.substring(type.length + YEAR_FORMAT_LENGTH);\n    const name = `${code}${year}${num}`;\n    return parseMessageName(name);\n};\nconst parseMessageUri = value => {\n    const [filename] = value.split('/').reverse();\n    const [messageId] = filename.split('.');\n    const ext = extname(value);\n    return {...parseMessageName(messageId), ext};\n};\nconst partitionByKeyLength = (key, length, value) => {\n    const val = String(value[key]);\n    const times = Math.ceil(val.length / length);\n    return [...'x'.repeat(times)].map((_, index) => {\n        const left = index * length;\n        const right = left + length;\n        return {...value, [key]: val.substring(left, right)};\n    });\n};\n\nmodule.exports = {\n    MAX_MESSAGE_TEXT_LENGTH,\n    NPC_DOMAIN,\n    createMessageId,\n    createMessageUrl,\n    createNpcPageUrl,\n    createYearsString,\n    dict,\n    getCurrentYear,\n    isNotNumber,\n    isNumberLike,\n    parseMessageId,\n    parseMessageName,\n    parseMessageUri,\n    partitionByKeyLength\n};",
+    "static": true,
+    "longname": "C:/Users/jason/dev/navysearch/src/utils/common.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 63,
+    "kind": "variable",
+    "name": "extname",
+    "memberof": "src/utils/common.js",
+    "static": true,
+    "longname": "src/utils/common.js~extname",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "variable",
+    "name": "invertObj",
+    "memberof": "src/utils/common.js",
+    "static": true,
+    "longname": "src/utils/common.js~invertObj",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "variable",
+    "name": "NPC_DOMAIN",
+    "memberof": "src/utils/common.js",
+    "static": true,
+    "longname": "src/utils/common.js~NPC_DOMAIN",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "variable",
+    "name": "MAX_MESSAGE_TEXT_LENGTH",
+    "memberof": "src/utils/common.js",
+    "static": true,
+    "longname": "src/utils/common.js~MAX_MESSAGE_TEXT_LENGTH",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "variable",
+    "name": "MESSAGE_TYPE_LOOKUP",
+    "memberof": "src/utils/common.js",
+    "static": true,
+    "longname": "src/utils/common.js~MESSAGE_TYPE_LOOKUP",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"NAV\": string, \"ALN\": string}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "variable",
+    "name": "YEAR_FORMAT_LENGTH",
+    "memberof": "src/utils/common.js",
+    "static": true,
+    "longname": "src/utils/common.js~YEAR_FORMAT_LENGTH",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "number"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "function",
+    "name": "createMessageId",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~createMessageId",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"type\": *, \"year\": *, \"num\": *}"
+        ],
+        "defaultRaw": {
+          "type": null,
+          "year": null,
+          "num": null
+        },
+        "defaultValue": "{\"type\":null,\"year\":null,\"num\":null}"
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "name": "createNpcPageUrl",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~createNpcPageUrl",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"type\": *, \"year\": *}"
+        ],
+        "defaultRaw": {
+          "type": null,
+          "year": null
+        },
+        "defaultValue": "{\"type\":null,\"year\":null}"
+      }
+    ],
+    "return": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "function",
+    "name": "createMessageUrl",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~createMessageUrl",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": "Create URL for actual message text",
+    "lineNumber": 21,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string} Message URL"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Message URL parameters"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.num",
+        "description": "Message number (ex: '042', '231')"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.type",
+        "description": "NAVADMIN | ALNAV"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.year",
+        "description": "Last two digits of year of page to scrape from"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": "Message URL"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "function",
+    "name": "createYearsString",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~createYearsString",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 32,
+    "undocument": true,
+    "params": [
+      {
+        "name": "years",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "name": "dict",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~dict",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "params": [
+      {
+        "name": "val",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "function",
+    "name": "getCurrentYear",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~getCurrentYear",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 39,
+    "undocument": true,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "function",
+    "name": "isNotNumber",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~isNotNumber",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 40,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "function",
+    "name": "isNumberLike",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~isNumberLike",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 41,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "function",
+    "name": "parseMessageName",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~parseMessageName",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 42,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{\"code\": *, \"id\": *, \"num\": *, \"type\": *, \"url\": *, \"year\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "function",
+    "name": "parseMessageId",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~parseMessageId",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 51,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "function",
+    "name": "parseMessageUri",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~parseMessageUri",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 59,
+    "undocument": true,
+    "params": [
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "{...undefined: Object, \"ext\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "function",
+    "name": "partitionByKeyLength",
+    "memberof": "src/utils/common.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/common.js~partitionByKeyLength",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/common.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 65,
+    "undocument": true,
+    "params": [
+      {
+        "name": "key",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "length",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "value",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "file",
+    "name": "src/utils/data.js",
+    "content": "const {promisify} = require('util');\nconst log = require('npmlog');\nconst chalk = require('chalk');\nconst ora = require('ora');\nconst Xray = require('x-ray');\nconst algoliasearch = require('algoliasearch');\nconst axios = require('axios').default;\nconst {difference} = require('ramda');\nconst parser = require('navy-message-parser');\nconst {\n    MAX_MESSAGE_TEXT_LENGTH,\n    createMessageId,\n    createNpcPageUrl,\n    createYearsString,\n    getCurrentYear,\n    parseMessageId,\n    parseMessageUri,\n    partitionByKeyLength\n} = require('./common.js');\nconst {bold, cyan, green} = chalk;\n\n/**\n * Scrape message data from  NPC\n * @param {string} type NAVADMIN | ALNAV\n * @param {(string|number)} year Last two digits of year of page to scrape from\n * @returns {object[]} Message items data from scraped information\n */\nconst scrapeMessageItems = async (type, year) => {\n    const x = new Xray();\n    const url = createNpcPageUrl({type, year});\n    const {data} = await axios.get(url);\n    const parsedHtml = await promisify(x(data, 'a', [{href: '@href'}]));\n    return parsedHtml\n        .map(({href}) => href)\n        .filter(str => /[.]txt$/.test(str))\n        .map(parseMessageUri)\n        .filter(({code, num}) => [code, num].every(({length}) => length > 0));\n};\n/**\n * Get message data\n * @returns {object} Parsed message data\n */\nconst getItem = ({code, num, type, year, url}) => {\n    const attributes = {code, num, type, url, year};\n    const id = createMessageId(attributes);\n    return axios.get(url)\n        .then(({data: text}) => {\n            const subject = parser.input(text).parse().get('subject') || 'BLANK';\n            return {...attributes, id, subject, text, objectID: id};\n        })\n        .catch(() => ({...attributes, id, objectID: id}));\n};\n/**\n * Get message data for a certain years\n * @param {string} type NAVADMIN | ALNAV\n * @param {(string[]|number[])} years Last two digits of year of page to scrape from\n * @returns {object[]} Collection of message data items\n */\nconst getItems = async (type, years) => {\n    const startMessage = items => {\n        const [{type}] = items;\n        const yearsString = createYearsString(years);\n        const message = `Fetching ${bold(type)} data for ${bold(yearsString)} (${items.length} items)\\n\\n`;\n        return cyan(message);\n    };\n    const doneMessage = items => {\n        const completed = items.filter(({text}) => typeof text !== 'undefined');\n        return `${green('COMPLETE')} ~ ${bold(completed.length)} of ${bold(items.length)} items processed\\n`;\n    };\n    const get = data => Promise.all(data.map(getItem));\n    const items = (await Promise.all(years.map(year => scrapeMessageItems(type, year)))).flat(Infinity);\n    const continueOperation = async () => {\n        const spinner = ora(startMessage(items)).start();\n        const data = await get(items);\n        const retry = async data => {\n            const failed = data.filter(({text}) => typeof text === 'undefined');\n            spinner.text = cyan(`Trying to fetch data for ${bold(failed.length)} of ${items.length} items`);\n            return (failed.length !== 0) ? get(failed) : Promise.resolve([]);\n        };\n        const secondAttempt = await retry(data);\n        const thirdAttempt = await retry(secondAttempt);\n        const fourthAttempt = await retry(thirdAttempt);\n        const results = [\n            ...data,\n            ...secondAttempt,\n            ...thirdAttempt,\n            ...fourthAttempt\n        ].filter(({text}) => typeof text !== 'undefined');\n        spinner.succeed(doneMessage(results));\n        return results;\n    };\n    return items.length > 0 ? continueOperation() : [];\n};\n/**\n * Get items from Algolia index\n * @param {object} options Configuration object\n * @returns {object} Results of get operations\n */\nconst getSavedItems = async ({id, key, name = 'message'}) => {\n    const client = algoliasearch(id, key);\n    const index = client.initIndex(name);\n    await index.setSettings({paginationLimitedTo: 1e9});\n    const {hits} = await index.search('', {hitsPerPage: 1e9});\n    return hits;\n};\n/**\n * Save items to Algolia search service\n * @param {object[]} items Message items to save\n * @param {object} options Configuration options\n * @param {string} options.id Application ID\n * @param {string} options.key Application Admin API key\n * @param {string} [options.name='message'] Index name\n * @returns {object} Results of save operation\n */\nconst saveItems = async (items, {id, key, name = 'message'}) => {\n    const SUFFIX_LENGTH = 5;\n    const spinner = ora('Connecting to Algolia').start();\n    const client = algoliasearch(id, key);\n    const index = client.initIndex(name);\n    try {\n        spinner.text = `Saving ${items.length} items...`;\n        const chunk = value => partitionByKeyLength('text', MAX_MESSAGE_TEXT_LENGTH, value);\n        const itemsToUpload = items\n            .flatMap(chunk)\n            .map((item, index) => ({...item, objectID: `${item.objectID}_${String(index).padStart(SUFFIX_LENGTH, '0')}`}));\n        const results = await index.saveObjects(itemsToUpload);\n        spinner.succeed(`Successfully saved ${items.length} (${itemsToUpload.length} total) items!\\n`);\n        return results;\n    } catch (error) {\n        spinner.fail(`Failed to save ${items.length} items`);\n        log.error(error);\n    }\n};\n/**\n * Populate Algolia index with message data for certain years\n * @param {string} type NAVADMIN | ALNAV\n * @param {string[]} years Years to add to Algolia index\n * @param {object} options Algolia options\n * @param {string} options.id Algolia application ID\n * @param {string} options.key Algolia admin application key\n * @param {string} [options.name='message'] Algolia index name\n * @returns {object} Results of populate\n */\nconst populate = async (type, years, {id, key, name}) => {\n    const items = await getItems(type, years);\n    const results = await saveItems(items, {id, key, name});\n    return results;\n};\n/**\n * Update Algolia index with missing message data for current year\n * @param {string} type NAVADMIN | ALNAV\n * @param {object} options Algolia options\n * @param {string} options.id Algolia application ID\n * @param {string} options.key Algolia admin application key\n * @param {string} [options.name] Algolia index name\n * @param {string} [options.verbose=true] Toggle terminal output verbosity\n * @returns {object} Results of populate\n */\nconst update = async (type, {id, key, name, verbose = true}) => {\n    const [scraped, saved] = await Promise.all([\n        getItems(type, [getCurrentYear()], {verbose}),\n        getSavedItems({id, key, name})\n    ]);\n    const left = scraped.map(({id}) => id);\n    const right = ([...(new Set(saved.map(({id}) => id)))]);\n    const updated = difference(left, right).sort().map(parseMessageId);\n    const items = await Promise.all(updated.map(getItem));\n    const noItems = items.length === 0;\n    if (noItems) {\n        process.stdout.write(`${bold('No records to update')}\\n\\n`);\n    }\n    return noItems ? {objectIDs: []} : await saveItems(items, {id, key, name});\n};\n\nmodule.exports = {\n    getItem,\n    getItems,\n    getSavedItems,\n    populate,\n    saveItems,\n    scrapeMessageItems,\n    update\n};",
+    "static": true,
+    "longname": "C:/Users/jason/dev/navysearch/src/utils/data.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 82,
+    "kind": "variable",
+    "name": "promisify",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~promisify",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "variable",
+    "name": "log",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~log",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "variable",
+    "name": "chalk",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~chalk",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 85,
+    "kind": "variable",
+    "name": "ora",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~ora",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "variable",
+    "name": "Xray",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~Xray",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "variable",
+    "name": "algoliasearch",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~algoliasearch",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "variable",
+    "name": "axios",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~axios",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "variable",
+    "name": "difference",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~difference",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "variable",
+    "name": "parser",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~parser",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "variable",
+    "name": "MAX_MESSAGE_TEXT_LENGTH",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~MAX_MESSAGE_TEXT_LENGTH",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "variable",
+    "name": "bold",
+    "memberof": "src/utils/data.js",
+    "static": true,
+    "longname": "src/utils/data.js~bold",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "function",
+    "name": "scrapeMessageItems",
+    "memberof": "src/utils/data.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/utils/data.js~scrapeMessageItems",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": "Scrape message data from  NPC",
+    "lineNumber": 28,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object[]} Message items data from scraped information"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "NAVADMIN | ALNAV"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "year",
+        "description": "Last two digits of year of page to scrape from"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object[]"
+      ],
+      "spread": false,
+      "description": "Message items data from scraped information"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 94,
+    "kind": "function",
+    "name": "getItem",
+    "memberof": "src/utils/data.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/utils/data.js~getItem",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": "Get message data",
+    "lineNumber": 43,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object} Parsed message data"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": "Parsed message data"
+    },
+    "params": [
+      {
+        "name": "objectPattern",
+        "types": [
+          "{\"code\": *, \"num\": *, \"type\": *, \"year\": *, \"url\": *}"
+        ],
+        "defaultRaw": {
+          "code": null,
+          "num": null,
+          "type": null,
+          "year": null,
+          "url": null
+        },
+        "defaultValue": "{\"code\":null,\"num\":null,\"type\":null,\"year\":null,\"url\":null}"
+      }
+    ],
+    "ignore": true
+  },
+  {
+    "__docId__": 95,
+    "kind": "function",
+    "name": "getItems",
+    "memberof": "src/utils/data.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/utils/data.js~getItems",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": "Get message data for a certain years",
+    "lineNumber": 59,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object[]} Collection of message data items"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "NAVADMIN | ALNAV"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string[]",
+          "number[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "years",
+        "description": "Last two digits of year of page to scrape from"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object[]"
+      ],
+      "spread": false,
+      "description": "Collection of message data items"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 96,
+    "kind": "function",
+    "name": "getSavedItems",
+    "memberof": "src/utils/data.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/utils/data.js~getSavedItems",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": "Get items from Algolia index",
+    "lineNumber": 99,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object} Results of get operations"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Configuration object"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": "Results of get operations"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 97,
+    "kind": "function",
+    "name": "saveItems",
+    "memberof": "src/utils/data.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/utils/data.js~saveItems",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": "Save items to Algolia search service",
+    "lineNumber": 115,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object} Results of save operation"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "items",
+        "description": "Message items to save"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Configuration options"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.id",
+        "description": "Application ID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.key",
+        "description": "Application Admin API key"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'message'",
+        "defaultRaw": "'message'",
+        "name": "options.name",
+        "description": "Index name"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": "Results of save operation"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 98,
+    "kind": "function",
+    "name": "populate",
+    "memberof": "src/utils/data.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/utils/data.js~populate",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": "Populate Algolia index with message data for certain years",
+    "lineNumber": 144,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object} Results of populate"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "NAVADMIN | ALNAV"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string[]"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "years",
+        "description": "Years to add to Algolia index"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Algolia options"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.id",
+        "description": "Algolia application ID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.key",
+        "description": "Algolia admin application key"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "'message'",
+        "defaultRaw": "'message'",
+        "name": "options.name",
+        "description": "Algolia index name"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": "Results of populate"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 99,
+    "kind": "function",
+    "name": "update",
+    "memberof": "src/utils/data.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/utils/data.js~update",
+    "access": "public",
+    "export": false,
+    "importPath": "usn/src/utils/data.js",
+    "importStyle": null,
+    "description": "Update Algolia index with missing message data for current year",
+    "lineNumber": 159,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object} Results of populate"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "type",
+        "description": "NAVADMIN | ALNAV"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "Algolia options"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.id",
+        "description": "Algolia application ID"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options.key",
+        "description": "Algolia admin application key"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options.name",
+        "description": "Algolia index name"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "true",
+        "defaultRaw": true,
+        "name": "options.verbose",
+        "description": "Toggle terminal output verbosity"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": "Results of populate"
+    },
+    "ignore": true
+  },
+  {
+    "kind": "index",
+    "content": "Navy Search\r\n===========\r\n> \"Search for those that ***serve***\"",
+    "longname": "C:\\Users\\jason\\dev\\navysearch\\README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\r\n    \"name\": \"usn\",\r\n    \"version\": \"0.0.5\",\r\n    \"description\": \"Command line tool and library for working with USN data\",\r\n    \"bin\": {\r\n        \"usn\": \"./bin/index.js\"\r\n    },\r\n    \"scripts\": {\r\n        \"test\": \"jest .*.test.js --coverage\",\r\n        \"build:es\": \"babel ./src --out-dir ./bin\",\r\n        \"build:docs\": \"esdoc -c ./esdoc.conf.json\",\r\n        \"watch:es\": \"watch 'npm run build:es' ./src\",\r\n        \"lint\": \"eslint . -c ./.eslintrc.js --fix\",\r\n        \"lint:docs\": \"eslint src/*.js src/**/*.js --no-eslintrc --rule valid-jsdoc:error --parser babel-eslint\",\r\n        \"lint:ing\": \"watch 'npm run lint' ./src\",\r\n        \"lint:tests\": \"eslint __tests__/**/*.js -c ./.eslintrc.js --fix --no-ignore\",\r\n        \"test:ing\": \"npm test -- --watchAll\",\r\n        \"open:coverage\": \"open-cli ./coverage/lcov-report/index.html\",\r\n        \"open:docs\": \"open-cli ./docs/index.html\",\r\n        \"postversion\": \"git push && git push --tags\",\r\n        \"predocs\": \"npm run lint:docs\",\r\n        \"docs\": \"npm run build:docs\",\r\n        \"pkg\": \"pkg --output usn --options no-warnings ./bin/cli.js\",\r\n        \"nexe\": \"nexe --input ./bin/cli.js --output usn\"\r\n    },\r\n    \"keywords\": [\r\n        \"us\",\r\n        \"navy\",\r\n        \"messages\"\r\n    ],\r\n    \"author\": \"Jason Wohlgemut\",\r\n    \"license\": \"ISC\",\r\n    \"dependencies\": {\r\n        \"algoliasearch\": \"^4.1.0\",\r\n        \"axios\": \"^0.19.2\",\r\n        \"chalk\": \"^4.0.0\",\r\n        \"dotenv\": \"^8.2.0\",\r\n        \"figures\": \"^3.2.0\",\r\n        \"lodash\": \"^4.17.15\",\r\n        \"meow\": \"^6.1.0\",\r\n        \"navy-message-parser\": \"0.0.7\",\r\n        \"npmlog\": \"^4.1.2\",\r\n        \"ora\": \"^4.0.3\",\r\n        \"pkg\": \"^4.4.7\",\r\n        \"ramda\": \"^0.27.0\",\r\n        \"tomo-cli\": \"^1.5.9\",\r\n        \"x-ray\": \"^2.3.4\",\r\n        \"yargs\": \"^15.3.1\"\r\n    },\r\n    \"devDependencies\": {\r\n        \"@babel/cli\": \"^7.8.4\",\r\n        \"@babel/core\": \"^7.9.0\",\r\n        \"@babel/plugin-proposal-class-properties\": \"^7.8.3\",\r\n        \"@babel/plugin-proposal-export-default-from\": \"^7.8.3\",\r\n        \"@babel/plugin-proposal-optional-chaining\": \"^7.9.0\",\r\n        \"@babel/plugin-transform-runtime\": \"^7.9.0\",\r\n        \"@babel/preset-env\": \"^7.9.5\",\r\n        \"@babel/runtime\": \"^7.9.2\",\r\n        \"babel-eslint\": \"^10.1.0\",\r\n        \"babel-jest\": \"^25.3.0\",\r\n        \"babel-preset-minify\": \"^0.5.1\",\r\n        \"esdoc\": \"^1.1.0\",\r\n        \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\r\n        \"esdoc-inject-style-plugin\": \"^1.0.0\",\r\n        \"esdoc-jsx-plugin\": \"^1.0.0\",\r\n        \"esdoc-standard-plugin\": \"^1.0.0\",\r\n        \"eslint\": \"^6.8.0\",\r\n        \"eslint-config-omaha-prime-grade\": \"^11.0.4\",\r\n        \"jest\": \"^25.3.0\",\r\n        \"jest-watch-typeahead\": \"^0.5.0\",\r\n        \"moxios\": \"^0.4.0\",\r\n        \"nexe\": \"^3.3.2\",\r\n        \"open-cli\": \"^6.0.1\",\r\n        \"watch\": \"^1.0.2\"\r\n    },\r\n    \"jest\": {\r\n        \"testMatch\": [\r\n            \"**/__tests__/**/*.(e2e|test).[jt]s?(x)\"\r\n        ],\r\n        \"watchPlugins\": [\r\n            \"jest-watch-typeahead/filename\",\r\n            \"jest-watch-typeahead/testname\"\r\n        ]\r\n    }\r\n}\r\n",
+    "longname": "C:\\Users\\jason\\dev\\navysearch\\package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "__docId__": 100,
+    "kind": "testFile",
+    "name": "__tests__/data.test.js",
+    "content": "/**\n * @jest-environment node\n */\nimport moxios from 'moxios';\nimport {NPC_DOMAIN, createNpcPageUrl} from '../src/utils/common.js';\nimport {getItem, getItems, scrapeMessageItems} from '../src/utils/data.js';\n\nconst OK = 200;\nconst NOT_FOUND = 404;\nconst URL_REGEX = /http[s]?[:]\\/\\/www[.]public[.]navy[.]mil\\/bupers[-]npc\\/reference\\/messages.*/;\nconst TEST_MESSAGE = 'INTENTIONALLY LEFT BLANK FOR TESTING';\nconst fragment = `${NPC_DOMAIN}/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/`;\nconst NPC_HTML = `\n    <!DOCTYPE html>\n    <html>\n        <body>\n            <a href=\"${fragment}NAV20116.txt\"/>\n            <a href=\"/someLocalPath\"/>\n            <a href=\"https://civilian.com/some.txt\"/>\n            <a href=\"http://${NPC_DOMAIN}/someAbsolutePath\"/>\n            <a href=\"${fragment}NAV20117.txt\"/>\n            <a href=\"http://${NPC_DOMAIN}/instruction.txt\"/>\n            <a href=\"http://${NPC_DOMAIN}/policy.pdf\"/>\n            <a href=\"http://${NPC_DOMAIN}/military.txt\"/>\n            <a href=\"#\"/>\n            <a href=\"miltxt\"/>\n            <a href=\"javascript:;\"/>\n            <a href=\"${fragment}NAV20118.txt\"/>\n        </body>\n    </html>\n`;\n\ndescribe('Data Utilities', () => {\n    beforeEach(() => {\n        moxios.install();\n    });\n    afterEach(() => {\n        moxios.uninstall();\n    });\n    test('can get message item data with getItem', async () => {\n        moxios.stubRequest(URL_REGEX, {\n            status: OK,\n            responseText: TEST_MESSAGE\n        });\n        const url = `${NPC_DOMAIN}/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20119.txt`;\n        const options = {\n            url,\n            code: 'NAV',\n            num: '042',\n            type: 'NAVADMIN',\n            year: '20'\n        };\n        expect(await getItem(options)).toMatchSnapshot();\n        moxios.stubRequest(URL_REGEX, {\n            status: NOT_FOUND,\n            responseText: TEST_MESSAGE\n        });\n    });\n    test('can get message data with getItem (failed request)', async () => {\n        moxios.stubRequest(URL_REGEX, {\n            status: NOT_FOUND\n        });\n        const url = `${NPC_DOMAIN}/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20119.txt`;\n        const options = {\n            url,\n            code: 'NAV',\n            num: '042',\n            type: 'NAVADMIN',\n            year: '20'\n        };\n        expect(await getItem(options)).toMatchSnapshot();\n    });\n    test('can scrape message data from NPC', async () => {\n        const type = 'NAVADMIN';\n        const year = '20';\n        moxios.stubRequest(createNpcPageUrl({type, year}), {\n            status: OK,\n            responseText: NPC_HTML\n        });\n        const items = await scrapeMessageItems(type, year);\n        expect(items).toMatchSnapshot();\n    });\n    test('can get data for all messages for a given year on NPC', async () => {\n        const type = 'NAVADMIN';\n        const year = '20';\n        moxios.stubRequest(createNpcPageUrl({type, year}), {\n            status: OK,\n            responseText: NPC_HTML\n        });\n        moxios.stubRequest(URL_REGEX, {\n            status: OK,\n            responseText: TEST_MESSAGE\n        });\n        const items = await getItems(type, [year]);\n        expect(items).toMatchSnapshot();\n    });\n});",
+    "static": true,
+    "longname": "C:/Users/jason/dev/navysearch/__tests__/data.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 101,
+    "kind": "test",
+    "name": "describe0",
+    "testId": 0,
+    "memberof": "__tests__/data.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "__tests__/data.test.js~describe0",
+    "access": null,
+    "description": "Data Utilities",
+    "lineNumber": 33
+  },
+  {
+    "__docId__": 102,
+    "kind": "test",
+    "name": "test1",
+    "testId": 1,
+    "memberof": "__tests__/data.test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/data.test.js~describe0.test1",
+    "access": null,
+    "description": "can get message item data with getItem",
+    "lineNumber": 40
+  },
+  {
+    "__docId__": 103,
+    "kind": "test",
+    "name": "test2",
+    "testId": 2,
+    "memberof": "__tests__/data.test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/data.test.js~describe0.test2",
+    "access": null,
+    "description": "can get message data with getItem (failed request)",
+    "lineNumber": 59
+  },
+  {
+    "__docId__": 104,
+    "kind": "test",
+    "name": "test3",
+    "testId": 3,
+    "memberof": "__tests__/data.test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/data.test.js~describe0.test3",
+    "access": null,
+    "description": "can scrape message data from NPC",
+    "lineNumber": 73
+  },
+  {
+    "__docId__": 105,
+    "kind": "test",
+    "name": "test4",
+    "testId": 4,
+    "memberof": "__tests__/data.test.js~describe0",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/data.test.js~describe0.test4",
+    "access": null,
+    "description": "can get data for all messages for a given year on NPC",
+    "lineNumber": 83
+  },
+  {
+    "__docId__": 106,
+    "kind": "testFile",
+    "name": "__tests__/utils.test.js",
+    "content": "import {\n    createMessageId,\n    createMessageUrl,\n    createNpcPageUrl,\n    createYearsString,\n    getCurrentYear,\n    isNumberLike,\n    parseMessageId,\n    parseMessageName,\n    parseMessageUri,\n    partitionByKeyLength\n} from '../src/utils/common.js';\n\ndescribe('Utilities', () => {\n    test('can determine if a value is \"number like\"', () => {\n        const shouldBeTrue = [0, 1, 2, 3, '0', '42', '1', '07'].every(isNumberLike);\n        const shouldBeFalse = ['a', 'one', false, true, '0l'].every(val => !isNumberLike(val));\n        expect(shouldBeTrue).toBe(true);\n        expect(shouldBeFalse).toBe(false);\n    });\n    test('can create message identifier strings', () => {\n        const type = 'FOOBAR';\n        const year = 20;\n        const num = 42;\n        expect(createMessageId({type, year, num})).toMatchSnapshot();\n    });\n    test('can create NPC page URL', () => {\n        const type = 'NAVADMIN';\n        const year = 17;\n        expect(createNpcPageUrl({type, year})).toMatchSnapshot();\n    });\n    test('can create message URL', () => {\n        expect(createMessageUrl({\n            num: '116',\n            type: 'NAVADMIN',\n            year: '20'\n        })).toMatchSnapshot();\n        expect(createMessageUrl({\n            num: '042',\n            type: 'NAVADMIN',\n            year: '19'\n        })).toMatchSnapshot();\n        expect(createMessageUrl({\n            num: '042',\n            type: 'NAVADMIN',\n            year: '18'\n        })).toMatchSnapshot();\n        expect(createMessageUrl({\n            num: '042',\n            type: 'NAVADMIN',\n            year: '17'\n        })).toMatchSnapshot();\n        expect(createMessageUrl({\n            num: '042',\n            type: 'ALNAV',\n            year: '18'\n        })).toMatchSnapshot();\n        expect(createMessageUrl({\n            num: '042',\n            type: 'ALNAV',\n            year: '15'\n        })).toMatchSnapshot();\n        expect(createMessageUrl({\n            num: '042',\n            type: 'ALNAV',\n            year: '10'\n        })).toMatchSnapshot();\n    });\n    test('can parse message ID', () => {\n        const value = 'NAVADMIN19042';\n        expect(parseMessageId(value)).toMatchSnapshot();\n    });\n    test('can parse message name', () => {\n        expect(parseMessageName('NAV20111')).toMatchSnapshot();\n        expect(parseMessageName('nav20092')).toMatchSnapshot();\n        expect(parseMessageName('ALN15777')).toMatchSnapshot();\n    });\n    test('can parse full message URI', () => {\n        const uri = 'https://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt';\n        const parsed = parseMessageUri(uri);\n        expect(parsed).toMatchSnapshot();\n    });\n    test('can parse fragment of message URI', () => {\n        const uri = '/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20080.txt';\n        const parsed = parseMessageUri(uri);\n        expect(parsed).toMatchSnapshot();\n    });\n    test('can parse abnormal message URI', () => {\n        const uri = 'https://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/nav20092.txt';\n        const parsed = parseMessageUri(uri);\n        expect(parsed).toMatchSnapshot();\n    });\n    test('can split objects into smaller objects based on length of a certain key', () => {\n        const MAX_LENGTH = 5;\n        const a = {\n            name: 'a',\n            text: '123456789'\n        };\n        const b = {\n            name: 'b',\n            text: '12345'\n        };\n        const c = {\n            name: 'c',\n            text: '01234567890123456789'\n        };\n        const chunk = value => partitionByKeyLength('text', MAX_LENGTH, value);\n        expect(chunk(a)).toMatchSnapshot();\n        expect(chunk(b)).toMatchSnapshot();\n        expect(chunk(c)).toMatchSnapshot();\n        expect([a, b, c].flatMap(chunk)).toMatchSnapshot();\n    });\n    test('can get current year', () => {\n        expect(getCurrentYear()).toEqual(20); // eslint-disable-line no-magic-numbers\n    });\n    test('can create human readable strings of year values', () => {\n        const years = [13, 14, 10, 12, 11]; // eslint-disable-line no-magic-numbers\n        expect(createYearsString(years.slice(-1))).toMatchSnapshot();\n        expect(createYearsString(years.slice(0, 2))).toMatchSnapshot();\n        expect(createYearsString(years)).toMatchSnapshot();\n    });\n});",
+    "static": true,
+    "longname": "C:/Users/jason/dev/navysearch/__tests__/utils.test.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 107,
+    "kind": "test",
+    "name": "describe5",
+    "testId": 5,
+    "memberof": "__tests__/utils.test.js",
+    "testDepth": 0,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5",
+    "access": null,
+    "description": "Utilities",
+    "lineNumber": 14
+  },
+  {
+    "__docId__": 108,
+    "kind": "test",
+    "name": "test6",
+    "testId": 6,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test6",
+    "access": null,
+    "description": "can determine if a value is \"number like\"",
+    "lineNumber": 15
+  },
+  {
+    "__docId__": 109,
+    "kind": "test",
+    "name": "test7",
+    "testId": 7,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test7",
+    "access": null,
+    "description": "can create message identifier strings",
+    "lineNumber": 21
+  },
+  {
+    "__docId__": 110,
+    "kind": "test",
+    "name": "test8",
+    "testId": 8,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test8",
+    "access": null,
+    "description": "can create NPC page URL",
+    "lineNumber": 27
+  },
+  {
+    "__docId__": 111,
+    "kind": "test",
+    "name": "test9",
+    "testId": 9,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test9",
+    "access": null,
+    "description": "can create message URL",
+    "lineNumber": 32
+  },
+  {
+    "__docId__": 112,
+    "kind": "test",
+    "name": "test10",
+    "testId": 10,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test10",
+    "access": null,
+    "description": "can parse message ID",
+    "lineNumber": 69
+  },
+  {
+    "__docId__": 113,
+    "kind": "test",
+    "name": "test11",
+    "testId": 11,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test11",
+    "access": null,
+    "description": "can parse message name",
+    "lineNumber": 73
+  },
+  {
+    "__docId__": 114,
+    "kind": "test",
+    "name": "test12",
+    "testId": 12,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test12",
+    "access": null,
+    "description": "can parse full message URI",
+    "lineNumber": 78
+  },
+  {
+    "__docId__": 115,
+    "kind": "test",
+    "name": "test13",
+    "testId": 13,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test13",
+    "access": null,
+    "description": "can parse fragment of message URI",
+    "lineNumber": 83
+  },
+  {
+    "__docId__": 116,
+    "kind": "test",
+    "name": "test14",
+    "testId": 14,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test14",
+    "access": null,
+    "description": "can parse abnormal message URI",
+    "lineNumber": 88
+  },
+  {
+    "__docId__": 117,
+    "kind": "test",
+    "name": "test15",
+    "testId": 15,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test15",
+    "access": null,
+    "description": "can split objects into smaller objects based on length of a certain key",
+    "lineNumber": 93
+  },
+  {
+    "__docId__": 118,
+    "kind": "test",
+    "name": "test16",
+    "testId": 16,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test16",
+    "access": null,
+    "description": "can get current year",
+    "lineNumber": 113
+  },
+  {
+    "__docId__": 119,
+    "kind": "test",
+    "name": "test17",
+    "testId": 17,
+    "memberof": "__tests__/utils.test.js~describe5",
+    "testDepth": 1,
+    "static": true,
+    "longname": "__tests__/utils.test.js~describe5.test17",
+    "access": null,
+    "description": "can create human readable strings of year values",
+    "lineNumber": 116
+  }
+]

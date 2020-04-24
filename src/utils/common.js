@@ -12,10 +12,11 @@ const createNpcPageUrl = ({type, year}) => {
 };
 /**
  * Create URL for actual message text
- * @param {object} options
- * @param {string} num Message number (ex: '042', '231')
- * @param {string} type NAVADMIN | ALNAV
- * @param {(string|number)} year Last two digits of year of page to scrape from
+ * @param {object} options Message URL parameters
+ * @param {string} options.num Message number (ex: '042', '231')
+ * @param {string} options.type NAVADMIN | ALNAV
+ * @param {(string|number)} options.year Last two digits of year of page to scrape from
+ * @returns {string} Message URL
  */
 const createMessageUrl = ({num, type, year}) => {
     const code = invertObj(MESSAGE_TYPE_LOOKUP)[type];

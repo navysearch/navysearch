@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">__tests__/utils.test.js | usn</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-readme.css"><meta name="description" content="Command line tool and library for working with USN data"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="usn"><meta property="twitter:description" content="Command line tool and library for working with USN data"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  </ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">__tests__/utils.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {
+    createMessageId,
+    createMessageUrl,
+    createNpcPageUrl,
+    createYearsString,
+    getCurrentYear,
+    isNumberLike,
+    parseMessageId,
+    parseMessageName,
+    parseMessageUri,
+    partitionByKeyLength
+} from &apos;../src/utils/common.js&apos;;
+
+describe(&apos;Utilities&apos;, () =&gt; {
+    test(&apos;can determine if a value is &quot;number like&quot;&apos;, () =&gt; {
+        const shouldBeTrue = [0, 1, 2, 3, &apos;0&apos;, &apos;42&apos;, &apos;1&apos;, &apos;07&apos;].every(isNumberLike);
+        const shouldBeFalse = [&apos;a&apos;, &apos;one&apos;, false, true, &apos;0l&apos;].every(val =&gt; !isNumberLike(val));
+        expect(shouldBeTrue).toBe(true);
+        expect(shouldBeFalse).toBe(false);
+    });
+    test(&apos;can create message identifier strings&apos;, () =&gt; {
+        const type = &apos;FOOBAR&apos;;
+        const year = 20;
+        const num = 42;
+        expect(createMessageId({type, year, num})).toMatchSnapshot();
+    });
+    test(&apos;can create NPC page URL&apos;, () =&gt; {
+        const type = &apos;NAVADMIN&apos;;
+        const year = 17;
+        expect(createNpcPageUrl({type, year})).toMatchSnapshot();
+    });
+    test(&apos;can create message URL&apos;, () =&gt; {
+        expect(createMessageUrl({
+            num: &apos;116&apos;,
+            type: &apos;NAVADMIN&apos;,
+            year: &apos;20&apos;
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: &apos;042&apos;,
+            type: &apos;NAVADMIN&apos;,
+            year: &apos;19&apos;
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: &apos;042&apos;,
+            type: &apos;NAVADMIN&apos;,
+            year: &apos;18&apos;
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: &apos;042&apos;,
+            type: &apos;NAVADMIN&apos;,
+            year: &apos;17&apos;
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: &apos;042&apos;,
+            type: &apos;ALNAV&apos;,
+            year: &apos;18&apos;
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: &apos;042&apos;,
+            type: &apos;ALNAV&apos;,
+            year: &apos;15&apos;
+        })).toMatchSnapshot();
+        expect(createMessageUrl({
+            num: &apos;042&apos;,
+            type: &apos;ALNAV&apos;,
+            year: &apos;10&apos;
+        })).toMatchSnapshot();
+    });
+    test(&apos;can parse message ID&apos;, () =&gt; {
+        const value = &apos;NAVADMIN19042&apos;;
+        expect(parseMessageId(value)).toMatchSnapshot();
+    });
+    test(&apos;can parse message name&apos;, () =&gt; {
+        expect(parseMessageName(&apos;NAV20111&apos;)).toMatchSnapshot();
+        expect(parseMessageName(&apos;nav20092&apos;)).toMatchSnapshot();
+        expect(parseMessageName(&apos;ALN15777&apos;)).toMatchSnapshot();
+    });
+    test(&apos;can parse full message URI&apos;, () =&gt; {
+        const uri = &apos;https://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20111.txt&apos;;
+        const parsed = parseMessageUri(uri);
+        expect(parsed).toMatchSnapshot();
+    });
+    test(&apos;can parse fragment of message URI&apos;, () =&gt; {
+        const uri = &apos;/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20080.txt&apos;;
+        const parsed = parseMessageUri(uri);
+        expect(parsed).toMatchSnapshot();
+    });
+    test(&apos;can parse abnormal message URI&apos;, () =&gt; {
+        const uri = &apos;https://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/nav20092.txt&apos;;
+        const parsed = parseMessageUri(uri);
+        expect(parsed).toMatchSnapshot();
+    });
+    test(&apos;can split objects into smaller objects based on length of a certain key&apos;, () =&gt; {
+        const MAX_LENGTH = 5;
+        const a = {
+            name: &apos;a&apos;,
+            text: &apos;123456789&apos;
+        };
+        const b = {
+            name: &apos;b&apos;,
+            text: &apos;12345&apos;
+        };
+        const c = {
+            name: &apos;c&apos;,
+            text: &apos;01234567890123456789&apos;
+        };
+        const chunk = value =&gt; partitionByKeyLength(&apos;text&apos;, MAX_LENGTH, value);
+        expect(chunk(a)).toMatchSnapshot();
+        expect(chunk(b)).toMatchSnapshot();
+        expect(chunk(c)).toMatchSnapshot();
+        expect([a, b, c].flatMap(chunk)).toMatchSnapshot();
+    });
+    test(&apos;can get current year&apos;, () =&gt; {
+        expect(getCurrentYear()).toEqual(20); // eslint-disable-line no-magic-numbers
+    });
+    test(&apos;can create human readable strings of year values&apos;, () =&gt; {
+        const years = [13, 14, 10, 12, 11]; // eslint-disable-line no-magic-numbers
+        expect(createYearsString(years.slice(-1))).toMatchSnapshot();
+        expect(createYearsString(years.slice(0, 2))).toMatchSnapshot();
+        expect(createYearsString(years)).toMatchSnapshot();
+    });
+});</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/utils/data.js | usn</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-readme.css"><meta name="description" content="Command line tool and library for working with USN data"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="usn"><meta property="twitter:description" content="Command line tool and library for working with USN data"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  </ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/utils/data.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const {promisify} = require(&apos;util&apos;);
+const log = require(&apos;npmlog&apos;);
+const chalk = require(&apos;chalk&apos;);
+const ora = require(&apos;ora&apos;);
+const Xray = require(&apos;x-ray&apos;);
+const algoliasearch = require(&apos;algoliasearch&apos;);
+const axios = require(&apos;axios&apos;).default;
+const {difference} = require(&apos;ramda&apos;);
+const parser = require(&apos;navy-message-parser&apos;);
+const {
+    MAX_MESSAGE_TEXT_LENGTH,
+    createMessageId,
+    createNpcPageUrl,
+    createYearsString,
+    getCurrentYear,
+    parseMessageId,
+    parseMessageUri,
+    partitionByKeyLength
+} = require(&apos;./common.js&apos;);
+const {bold, cyan, green} = chalk;
+
+/**
+ * Scrape message data from  NPC
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {(string|number)} year Last two digits of year of page to scrape from
+ * @returns {object[]} Message items data from scraped information
+ */
+const scrapeMessageItems = async (type, year) =&gt; {
+    const x = new Xray();
+    const url = createNpcPageUrl({type, year});
+    const {data} = await axios.get(url);
+    const parsedHtml = await promisify(x(data, &apos;a&apos;, [{href: &apos;@href&apos;}]));
+    return parsedHtml
+        .map(({href}) =&gt; href)
+        .filter(str =&gt; /[.]txt$/.test(str))
+        .map(parseMessageUri)
+        .filter(({code, num}) =&gt; [code, num].every(({length}) =&gt; length &gt; 0));
+};
+/**
+ * Get message data
+ * @returns {object} Parsed message data
+ */
+const getItem = ({code, num, type, year, url}) =&gt; {
+    const attributes = {code, num, type, url, year};
+    const id = createMessageId(attributes);
+    return axios.get(url)
+        .then(({data: text}) =&gt; {
+            const subject = parser.input(text).parse().get(&apos;subject&apos;) || &apos;BLANK&apos;;
+            return {...attributes, id, subject, text, objectID: id};
+        })
+        .catch(() =&gt; ({...attributes, id, objectID: id}));
+};
+/**
+ * Get message data for a certain years
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {(string[]|number[])} years Last two digits of year of page to scrape from
+ * @returns {object[]} Collection of message data items
+ */
+const getItems = async (type, years) =&gt; {
+    const startMessage = items =&gt; {
+        const [{type}] = items;
+        const yearsString = createYearsString(years);
+        const message = `Fetching ${bold(type)} data for ${bold(yearsString)} (${items.length} items)\n\n`;
+        return cyan(message);
+    };
+    const doneMessage = items =&gt; {
+        const completed = items.filter(({text}) =&gt; typeof text !== &apos;undefined&apos;);
+        return `${green(&apos;COMPLETE&apos;)} ~ ${bold(completed.length)} of ${bold(items.length)} items processed\n`;
+    };
+    const get = data =&gt; Promise.all(data.map(getItem));
+    const items = (await Promise.all(years.map(year =&gt; scrapeMessageItems(type, year)))).flat(Infinity);
+    const continueOperation = async () =&gt; {
+        const spinner = ora(startMessage(items)).start();
+        const data = await get(items);
+        const retry = async data =&gt; {
+            const failed = data.filter(({text}) =&gt; typeof text === &apos;undefined&apos;);
+            spinner.text = cyan(`Trying to fetch data for ${bold(failed.length)} of ${items.length} items`);
+            return (failed.length !== 0) ? get(failed) : Promise.resolve([]);
+        };
+        const secondAttempt = await retry(data);
+        const thirdAttempt = await retry(secondAttempt);
+        const fourthAttempt = await retry(thirdAttempt);
+        const results = [
+            ...data,
+            ...secondAttempt,
+            ...thirdAttempt,
+            ...fourthAttempt
+        ].filter(({text}) =&gt; typeof text !== &apos;undefined&apos;);
+        spinner.succeed(doneMessage(results));
+        return results;
+    };
+    return items.length &gt; 0 ? continueOperation() : [];
+};
+/**
+ * Get items from Algolia index
+ * @param {object} options Configuration object
+ * @returns {object} Results of get operations
+ */
+const getSavedItems = async ({id, key, name = &apos;message&apos;}) =&gt; {
+    const client = algoliasearch(id, key);
+    const index = client.initIndex(name);
+    await index.setSettings({paginationLimitedTo: 1e9});
+    const {hits} = await index.search(&apos;&apos;, {hitsPerPage: 1e9});
+    return hits;
+};
+/**
+ * Save items to Algolia search service
+ * @param {object[]} items Message items to save
+ * @param {object} options Configuration options
+ * @param {string} options.id Application ID
+ * @param {string} options.key Application Admin API key
+ * @param {string} [options.name=&apos;message&apos;] Index name
+ * @returns {object} Results of save operation
+ */
+const saveItems = async (items, {id, key, name = &apos;message&apos;}) =&gt; {
+    const SUFFIX_LENGTH = 5;
+    const spinner = ora(&apos;Connecting to Algolia&apos;).start();
+    const client = algoliasearch(id, key);
+    const index = client.initIndex(name);
+    try {
+        spinner.text = `Saving ${items.length} items...`;
+        const chunk = value =&gt; partitionByKeyLength(&apos;text&apos;, MAX_MESSAGE_TEXT_LENGTH, value);
+        const itemsToUpload = items
+            .flatMap(chunk)
+            .map((item, index) =&gt; ({...item, objectID: `${item.objectID}_${String(index).padStart(SUFFIX_LENGTH, &apos;0&apos;)}`}));
+        const results = await index.saveObjects(itemsToUpload);
+        spinner.succeed(`Successfully saved ${items.length} (${itemsToUpload.length} total) items!\n`);
+        return results;
+    } catch (error) {
+        spinner.fail(`Failed to save ${items.length} items`);
+        log.error(error);
+    }
+};
+/**
+ * Populate Algolia index with message data for certain years
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {string[]} years Years to add to Algolia index
+ * @param {object} options Algolia options
+ * @param {string} options.id Algolia application ID
+ * @param {string} options.key Algolia admin application key
+ * @param {string} [options.name=&apos;message&apos;] Algolia index name
+ * @returns {object} Results of populate
+ */
+const populate = async (type, years, {id, key, name}) =&gt; {
+    const items = await getItems(type, years);
+    const results = await saveItems(items, {id, key, name});
+    return results;
+};
+/**
+ * Update Algolia index with missing message data for current year
+ * @param {string} type NAVADMIN | ALNAV
+ * @param {object} options Algolia options
+ * @param {string} options.id Algolia application ID
+ * @param {string} options.key Algolia admin application key
+ * @param {string} [options.name] Algolia index name
+ * @param {string} [options.verbose=true] Toggle terminal output verbosity
+ * @returns {object} Results of populate
+ */
+const update = async (type, {id, key, name, verbose = true}) =&gt; {
+    const [scraped, saved] = await Promise.all([
+        getItems(type, [getCurrentYear()], {verbose}),
+        getSavedItems({id, key, name})
+    ]);
+    const left = scraped.map(({id}) =&gt; id);
+    const right = ([...(new Set(saved.map(({id}) =&gt; id)))]);
+    const updated = difference(left, right).sort().map(parseMessageId);
+    const items = await Promise.all(updated.map(getItem));
+    const noItems = items.length === 0;
+    if (noItems) {
+        process.stdout.write(`${bold(&apos;No records to update&apos;)}\n\n`);
+    }
+    return noItems ? {objectIDs: []} : await saveItems(items, {id, key, name});
+};
+
+module.exports = {
+    getItem,
+    getItems,
+    getSavedItems,
+    populate,
+    saveItems,
+    scrapeMessageItems,
+    update
+};</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -23,7 +23,7 @@ const {bold, cyan, green} = chalk;
  * Scrape message data from  NPC
  * @param {string} type NAVADMIN | ALNAV
  * @param {(string|number)} year Last two digits of year of page to scrape from
- * @returns {object[]}
+ * @returns {object[]} Message items data from scraped information
  */
 const scrapeMessageItems = async (type, year) => {
     const x = new Xray();
@@ -105,7 +105,7 @@ const getSavedItems = async ({id, key, name = 'message'}) => {
 };
 /**
  * Save items to Algolia search service
- * @param {object[]} items
+ * @param {object[]} items Message items to save
  * @param {object} options Configuration options
  * @param {string} options.id Application ID
  * @param {string} options.key Application Admin API key

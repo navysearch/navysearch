@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">__tests__/data.test.js | usn</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-readme.css"><meta name="description" content="Command line tool and library for working with USN data"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="usn"><meta property="twitter:description" content="Command line tool and library for working with USN data"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  </ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">__tests__/data.test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @jest-environment node
+ */
+import moxios from &apos;moxios&apos;;
+import {NPC_DOMAIN, createNpcPageUrl} from &apos;../src/utils/common.js&apos;;
+import {getItem, getItems, scrapeMessageItems} from &apos;../src/utils/data.js&apos;;
+
+const OK = 200;
+const NOT_FOUND = 404;
+const URL_REGEX = /http[s]?[:]\/\/www[.]public[.]navy[.]mil\/bupers[-]npc\/reference\/messages.*/;
+const TEST_MESSAGE = &apos;INTENTIONALLY LEFT BLANK FOR TESTING&apos;;
+const fragment = `${NPC_DOMAIN}/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/`;
+const NPC_HTML = `
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;body&gt;
+            &lt;a href=&quot;${fragment}NAV20116.txt&quot;/&gt;
+            &lt;a href=&quot;/someLocalPath&quot;/&gt;
+            &lt;a href=&quot;https://civilian.com/some.txt&quot;/&gt;
+            &lt;a href=&quot;http://${NPC_DOMAIN}/someAbsolutePath&quot;/&gt;
+            &lt;a href=&quot;${fragment}NAV20117.txt&quot;/&gt;
+            &lt;a href=&quot;http://${NPC_DOMAIN}/instruction.txt&quot;/&gt;
+            &lt;a href=&quot;http://${NPC_DOMAIN}/policy.pdf&quot;/&gt;
+            &lt;a href=&quot;http://${NPC_DOMAIN}/military.txt&quot;/&gt;
+            &lt;a href=&quot;#&quot;/&gt;
+            &lt;a href=&quot;miltxt&quot;/&gt;
+            &lt;a href=&quot;javascript:;&quot;/&gt;
+            &lt;a href=&quot;${fragment}NAV20118.txt&quot;/&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+`;
+
+describe(&apos;Data Utilities&apos;, () =&gt; {
+    beforeEach(() =&gt; {
+        moxios.install();
+    });
+    afterEach(() =&gt; {
+        moxios.uninstall();
+    });
+    test(&apos;can get message item data with getItem&apos;, async () =&gt; {
+        moxios.stubRequest(URL_REGEX, {
+            status: OK,
+            responseText: TEST_MESSAGE
+        });
+        const url = `${NPC_DOMAIN}/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20119.txt`;
+        const options = {
+            url,
+            code: &apos;NAV&apos;,
+            num: &apos;042&apos;,
+            type: &apos;NAVADMIN&apos;,
+            year: &apos;20&apos;
+        };
+        expect(await getItem(options)).toMatchSnapshot();
+        moxios.stubRequest(URL_REGEX, {
+            status: NOT_FOUND,
+            responseText: TEST_MESSAGE
+        });
+    });
+    test(&apos;can get message data with getItem (failed request)&apos;, async () =&gt; {
+        moxios.stubRequest(URL_REGEX, {
+            status: NOT_FOUND
+        });
+        const url = `${NPC_DOMAIN}/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20119.txt`;
+        const options = {
+            url,
+            code: &apos;NAV&apos;,
+            num: &apos;042&apos;,
+            type: &apos;NAVADMIN&apos;,
+            year: &apos;20&apos;
+        };
+        expect(await getItem(options)).toMatchSnapshot();
+    });
+    test(&apos;can scrape message data from NPC&apos;, async () =&gt; {
+        const type = &apos;NAVADMIN&apos;;
+        const year = &apos;20&apos;;
+        moxios.stubRequest(createNpcPageUrl({type, year}), {
+            status: OK,
+            responseText: NPC_HTML
+        });
+        const items = await scrapeMessageItems(type, year);
+        expect(items).toMatchSnapshot();
+    });
+    test(&apos;can get data for all messages for a given year on NPC&apos;, async () =&gt; {
+        const type = &apos;NAVADMIN&apos;;
+        const year = &apos;20&apos;;
+        moxios.stubRequest(createNpcPageUrl({type, year}), {
+            status: OK,
+            responseText: NPC_HTML
+        });
+        moxios.stubRequest(URL_REGEX, {
+            status: OK,
+            responseText: TEST_MESSAGE
+        });
+        const items = await getItems(type, [year]);
+        expect(items).toMatchSnapshot();
+    });
+});</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/utils/common.js | usn</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-readme.css"><meta name="description" content="Command line tool and library for working with USN data"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="usn"><meta property="twitter:description" content="Command line tool and library for working with USN data"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  </ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/utils/common.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">const {extname} = require(&apos;path&apos;);
+const {invertObj, takeWhile} = require(&apos;ramda&apos;);
+
+const NPC_DOMAIN = &apos;http://www.public.navy.mil&apos;;
+const MAX_MESSAGE_TEXT_LENGTH = 5000;
+const MESSAGE_TYPE_LOOKUP = {NAV: &apos;NAVADMIN&apos;, ALN: &apos;ALNAV&apos;};
+const YEAR_FORMAT_LENGTH = 2;
+const createMessageId = ({type, year, num}) =&gt; `${type}${year}${num}`;
+const createNpcPageUrl = ({type, year}) =&gt; {
+    const format = year =&gt; (String(year).length === &apos;YYYY&apos;.length) ? Number(year.substr(-2)) : year; // eslint-disable-line no-magic-numbers
+    return `${NPC_DOMAIN}/bupers-npc/reference/messages/${type}S/Pages/${type}20${format(year)}.aspx`;
+};
+/**
+ * Create URL for actual message text
+ * @param {object} options Message URL parameters
+ * @param {string} options.num Message number (ex: &apos;042&apos;, &apos;231&apos;)
+ * @param {string} options.type NAVADMIN | ALNAV
+ * @param {(string|number)} options.year Last two digits of year of page to scrape from
+ * @returns {string} Message URL
+ */
+const createMessageUrl = ({num, type, year}) =&gt; {
+    const code = invertObj(MESSAGE_TYPE_LOOKUP)[type];
+    const yearNumber = parseInt(year, 10);
+    const isNAVADMIN = code === &apos;NAV&apos;;
+    const isALNAV = code === &apos;ALN&apos;;
+    const isOldMessage = yearNumber &lt; 18; // eslint-disable-line no-magic-numbers
+    const useDocuments2 = isNAVADMIN &amp;&amp; isOldMessage;
+    const useSubfolder = (isNAVADMIN &amp;&amp; !isOldMessage) || isALNAV;
+    const fragment = `bupers-npc/reference/messages/Documents${useDocuments2 ? &apos;2&apos; : &apos;&apos;}`;
+    return `${NPC_DOMAIN}/${fragment}/${useSubfolder ? `${type}S/` : &apos;&apos;}${code}20${year}/${code}${year}${num}.txt`;
+};
+const createYearsString = years =&gt; years
+    .sort()
+    .slice(0, -1)
+    .map(year =&gt; `20${year}`)
+    .join(&apos;, &apos;)
+    .concat(`${years.length &gt; 2 ? &apos;,&apos; : &apos;&apos;}${years.length &gt; 1 ? &apos; and &apos; : &apos;&apos;}20${years.slice(-1)}`);
+const dict = val =&gt; (new Map(Object.entries(val)));
+const getCurrentYear = () =&gt; Number(String((new Date()).getFullYear()).substring(2));
+const isNotNumber = value =&gt; isNaN(Number(value));
+const isNumberLike = value =&gt; !isNaN(Number(value));
+const parseMessageName = value =&gt; {
+    const code = takeWhile(isNotNumber, [...value]).join(&apos;&apos;).toUpperCase();
+    const type = MESSAGE_TYPE_LOOKUP[code];
+    const year = value.substring(code.length, code.length + YEAR_FORMAT_LENGTH);
+    const num = value.substring(code.length + YEAR_FORMAT_LENGTH);
+    const url = createMessageUrl({num, type, year});
+    const id = createMessageId({num, type, year});
+    return {code, id, num, type, url, year};
+};
+const parseMessageId = value =&gt; {
+    const type = takeWhile(isNotNumber, [...value]).join(&apos;&apos;).toUpperCase();
+    const code = invertObj(MESSAGE_TYPE_LOOKUP)[type];
+    const year = value.substring(type.length, type.length + YEAR_FORMAT_LENGTH);
+    const num = value.substring(type.length + YEAR_FORMAT_LENGTH);
+    const name = `${code}${year}${num}`;
+    return parseMessageName(name);
+};
+const parseMessageUri = value =&gt; {
+    const [filename] = value.split(&apos;/&apos;).reverse();
+    const [messageId] = filename.split(&apos;.&apos;);
+    const ext = extname(value);
+    return {...parseMessageName(messageId), ext};
+};
+const partitionByKeyLength = (key, length, value) =&gt; {
+    const val = String(value[key]);
+    const times = Math.ceil(val.length / length);
+    return [...&apos;x&apos;.repeat(times)].map((_, index) =&gt; {
+        const left = index * length;
+        const right = left + length;
+        return {...value, [key]: val.substring(left, right)};
+    });
+};
+
+module.exports = {
+    MAX_MESSAGE_TEXT_LENGTH,
+    NPC_DOMAIN,
+    createMessageId,
+    createMessageUrl,
+    createNpcPageUrl,
+    createYearsString,
+    dict,
+    getCurrentYear,
+    isNotNumber,
+    isNumberLike,
+    parseMessageId,
+    parseMessageName,
+    parseMessageUri,
+    partitionByKeyLength
+};</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
