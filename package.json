@@ -1,6 +1,6 @@
 {
     "name": "usn",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Command line tool and library for working with USN data",
     "bin": {
         "usn": "./bin/index.js"
