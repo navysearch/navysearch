@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Data Utilities can get data for all messages for a given year on NPC 1`] = `
+Array [
+  Object {
+    "code": "NAV",
+    "id": "NAVADMIN20116",
+    "num": "116",
+    "objectID": "NAVADMIN20116",
+    "text": "INTENTIONALLY LEFT BLANK FOR TESTING",
+    "type": "NAVADMIN",
+    "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20116.txt",
+    "year": "20",
+  },
+  Object {
+    "code": "NAV",
+    "id": "NAVADMIN20117",
+    "num": "117",
+    "objectID": "NAVADMIN20117",
+    "text": "INTENTIONALLY LEFT BLANK FOR TESTING",
+    "type": "NAVADMIN",
+    "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20117.txt",
+    "year": "20",
+  },
+  Object {
+    "code": "NAV",
+    "id": "NAVADMIN20118",
+    "num": "118",
+    "objectID": "NAVADMIN20118",
+    "text": "INTENTIONALLY LEFT BLANK FOR TESTING",
+    "type": "NAVADMIN",
+    "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20118.txt",
+    "year": "20",
+  },
+]
+`;
+
+exports[`Data Utilities can get message data with getItem (failed request) 1`] = `
+Object {
+  "code": "NAV",
+  "id": "NAVADMIN20042",
+  "num": "042",
+  "objectID": "NAVADMIN20042",
+  "type": "NAVADMIN",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20119.txt",
+  "year": "20",
+}
+`;
+
+exports[`Data Utilities can get message item data with getItem 1`] = `
+Object {
+  "code": "NAV",
+  "id": "NAVADMIN20042",
+  "num": "042",
+  "objectID": "NAVADMIN20042",
+  "text": "INTENTIONALLY LEFT BLANK FOR TESTING",
+  "type": "NAVADMIN",
+  "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20119.txt",
+  "year": "20",
+}
+`;
+
+exports[`Data Utilities can scrape message data from NPC 1`] = `
+Array [
+  Object {
+    "code": "NAV",
+    "ext": ".txt",
+    "id": "NAVADMIN20116",
+    "num": "116",
+    "type": "NAVADMIN",
+    "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20116.txt",
+    "year": "20",
+  },
+  Object {
+    "code": "NAV",
+    "ext": ".txt",
+    "id": "NAVADMIN20117",
+    "num": "117",
+    "type": "NAVADMIN",
+    "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20117.txt",
+    "year": "20",
+  },
+  Object {
+    "code": "NAV",
+    "ext": ".txt",
+    "id": "NAVADMIN20118",
+    "num": "118",
+    "type": "NAVADMIN",
+    "url": "http://www.public.navy.mil/bupers-npc/reference/messages/Documents/NAVADMINS/NAV2020/NAV20118.txt",
+    "year": "20",
+  },
+]
+`;

@@ -1,0 +1,8 @@
+.env
+.eslintrc.js
+babel.config.js
+/.github
+/.vscode
+/__tests__
+/coverage
+/resources

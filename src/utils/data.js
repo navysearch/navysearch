@@ -24,13 +24,16 @@ const {bold, cyan, green} = chalk;
  * @param {(string|number)} year Last two digits of year of page to scrape from
  * @returns {object[]}
  */
-const scrapeItems = async (type, year) => {
+const scrapeMessageItems = async (type, year) => {
+    const x = new Xray();
     const url = createNpcPageUrl({type, year});
-    return (await promisify((new Xray())(url, 'a', [{href: '@href'}]))(url))
-        .map(val => val.href)
+    const {data} = await axios.get(url);
+    const parsedHtml = await promisify(x(data, 'a', [{href: '@href'}]));
+    return parsedHtml
+        .map(({href}) => href)
         .filter(str => /[.]txt$/.test(str))
-        .map(str => str.split('mil')[1])
-        .map(parseMessageUri);
+        .map(parseMessageUri)
+        .filter(({code, num}) => [code, num].every(({length}) => length > 0));
 };
 const getItem = ({code, num, type, year, url}) => {
     const attributes = {code, num, type, url, year};
@@ -51,7 +54,7 @@ const getItems = async (type, years) => {
         return `${green('COMPLETE')} ~ ${bold(completed.length)} of ${bold(items.length)} items processed\n`;
     };
     const get = data => Promise.all(data.map(getItem));
-    const items = (await Promise.all(years.map(year => scrapeItems(type, year)))).flat(Infinity);
+    const items = (await Promise.all(years.map(year => scrapeMessageItems(type, year)))).flat(Infinity);
     const continueOperation = async () => {
         const spinner = ora(startMessage(items)).start();
         const data = await get(items);
@@ -136,6 +139,6 @@ module.exports = {
     getSavedItems,
     populate,
     saveItems,
-    scrapeItems,
+    scrapeMessageItems,
     update
 };
