@@ -14,6 +14,7 @@
         "lint:ing": "watch 'npm run lint' ./src",
         "lint:tests": "eslint __tests__/**/*.js -c ./.eslintrc.js --fix --no-ignore",
         "test:ing": "npm test -- --watchAll",
+        "postversion": "git push && git push --tags",
         "pkg": "pkg --output usn --options no-warnings ./bin/cli.js",
         "nexe": "nexe --input ./bin/cli.js --output usn"
     },

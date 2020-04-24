@@ -1,5 +1,6 @@
 .env
 .eslintrc.js
+.eslintignore
 babel.config.js
 /.github
 /.vscode

@@ -1,12 +1,12 @@
 module.exports = {
-    plugins: [
-        '@babel/plugin-transform-runtime',
-        '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-export-default-from',
-        '@babel/plugin-proposal-optional-chaining'
-    ],
     presets: [
-        '@babel/preset-env',
-        'babel-preset-minify'
+        ['@babel/preset-env', {targets: {node: '6.10'}, useBuiltIns: 'usage', corejs: 3}],
+        'minify'
+    ],
+    plugins: [
+        '@babel/transform-runtime',
+        '@babel/proposal-class-properties',
+        '@babel/proposal-optional-chaining',
+        '@babel/proposal-export-default-from'
     ]
 };
