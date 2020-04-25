@@ -14,7 +14,8 @@ const getAction = (command, flags, defaultAction) => {
             process.stderr.write(message);
             defaultAction();
         } else {
-            process.stdout.write(`STDIN: ${stdin}`);
+            process.stdout.write(`STDIN: ${stdin}\n`);
+            process.stdout.write(`Flags: ${format(flags)}`);
         }
     };
     const lookup = dict({
@@ -25,10 +26,10 @@ const getAction = (command, flags, defaultAction) => {
             const results = await update(type, {id, key, verbose});
             results.objectIDs.length > 0 && process.stdout.write(format(results));
         },
-        info: async () => {/* eslint-disable no-console */
-            console.log(`\n  ${bold('ID')}  = `, id);
-            console.log(`  ${bold('Key')} = `, key);
-        }/* eslint-enable no-console */
+        info: async () => {
+            process.stdout.write(`\n  ${bold('ID')}  = ${id === '' ? bold.red('NOT SET') : id}`);
+            process.stdout.write(`\n  ${bold('Key')} = ${key}\n`);
+        }
     });
     return lookup.has(command) ? lookup.get(command) : noCommand;
 };
@@ -77,11 +78,11 @@ const options = {
         },
         id: {
             type: 'string',
-            default: process.env.ALGOLIA_APP_ID || bold.red('not set')
+            default: process.env.ALGOLIA_APP_ID || ''
         },
         key: {
             type: 'string',
-            default: process.env.ALGOLIA_ADMIN_API_KEY || bold.red('not set')
+            default: process.env.ALGOLIA_ADMIN_API_KEY || ''
         }
     }
 };
